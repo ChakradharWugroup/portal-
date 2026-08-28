@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  # Database PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    container_name: portal_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: portal
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Database Admin UI
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: portal_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@dahje.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - '5050:80'
+    depends_on:
+      - postgres
+
+  # NestJS Backend
+  backend:
+    image: ghcr.io/kallechakradhar312-prog/cotton-republic-ai-platform/backend:latest
+    container_name: portal_backend
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - '7687:7687'
+    depends_on:
+      - postgres
+
+  # FastAPI AI Service
+  ai-service:
+    image: ghcr.io/kallechakradhar312-prog/cotton-republic-ai-platform/ai-service:latest
+    container_name: portal_ai_service
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - '8080:8080'
+    depends_on:
+      - backend
+
+  # React Frontend (Nginx)
+  frontend:
+    image: ghcr.io/kallechakradhar312-prog/cotton-republic-ai-platform/frontend:latest
+    container_name: portal_frontend
+    restart: always
+    ports:
+      - '3003:80'
+    depends_on:
+      - backend
+
+  # Auto-Updater (Watchtower)
+  watchtower:
+    image: containrrr/watchtower
+    container_name: local_updater
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./config.json:/config/config.json:ro
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=120
+      - WATCHTOWER_CLEANUP=true
+
+volumes:
+  postgres_data:

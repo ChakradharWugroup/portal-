@@ -1,0 +1,23 @@
+# Package manager folders
+node_modules/
+dist/
+build/
+.system_generated/
+*.log
+
+# SQLite Database
+*.sqlite
+backend/data.sqlite
+
+# Configuration Secrets
+.env
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Python
+venv/
+venv_django/
+__pycache__/
+*.pyc

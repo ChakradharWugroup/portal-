@@ -1,0 +1,35 @@
+Created At: 2026-08-24T11:26:10+08:00
+Completed At: 2026-08-24T11:26:15+08:00
+File Path: `file:///C:/Users/KalleChakradhar/Desktop/meeting_AI_report/meeting-ai-enterprise/backend/api/fastapi.py`
+Total Lines: 605
+Total Bytes: 24078
+Showing lines 240 to 266
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+240: @app.post("/youtube", tags=["Meetings"])
+241: async def dispatch_youtube_bot(request: Request, background_tasks: BackgroundTasks):
+242:     data = await request.json()
+243:     url = data.get("url")
+244:     if not url:
+245:         raise HTTPException(status_code=400, detail="Missing YouTube URL")
+246:         
+247:     import uuid
+248:     meeting_id = f"yt-{uuid.uuid4().hex[:6]}"
+249:     
+250:     dynamic_meetings.insert(0, {
+251:         "id": meeting_id,
+252:         "title": f"Processing YouTube...",
+253:         "status": "live",
+254:         "participants": 1,
+255:         "duration": "0m",
+256:         "summary": "Initializing YouTube extraction...",
+257:         "sentiment": "Processing"
+258:     })
+259:     
+260:     background_tasks.add_task(process_youtube_url, url, meeting_id)
+261:     return {"status": "success", "message": "YouTube bot dispatched"}
+262: 
+263: class ScheduleRequest(BaseModel):
+264:     url: str
+265:     scheduled_time: str # ISO format string
+266: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.
