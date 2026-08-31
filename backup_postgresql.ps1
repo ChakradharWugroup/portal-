@@ -11,7 +11,7 @@ $DbName = "cotton_republic"
 $DbUser = "postgres"
 $NasRoot = "G:\KALLE\PostgreSQL_Backup"
 $TempDir = "C:\Temp"
-$Password = "Chakri1439@"  # Replace with actual postgres password if different
+$Password = "YOUR_POSTGRES_PASSWORD"  # Replace with actual postgres password if different
 
 # --- Checksum and Path Details ---
 $Date = Get-Date
