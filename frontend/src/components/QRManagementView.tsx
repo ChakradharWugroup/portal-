@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Database, Folder, QrCode, ArrowLeft, Loader2, AlertCircle } from 'lucide-react';
 
 export default function QRManagementView({ lang }: { lang: string }) {
@@ -14,7 +14,7 @@ export default function QRManagementView({ lang }: { lang: string }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`http://${window.location.hostname}:8005/api/qr/collections`);
+      const res = await fetch(`https://${window.location.hostname}:8445/api/qr/collections`);
       const data = await res.json();
       if (data.status === 'success') {
         setCollections(data.data);
@@ -34,8 +34,8 @@ export default function QRManagementView({ lang }: { lang: string }) {
     setError(null);
     try {
       const url = collectionId 
-        ? `http://${window.location.hostname}:8005/api/qr/garment-codes?collection_id=${collectionId}`
-        : `http://${window.location.hostname}:8005/api/qr/garment-codes`;
+        ? `https://${window.location.hostname}:8445/api/qr/garment-codes?collection_id=${collectionId}`
+        : `https://${window.location.hostname}:8445/api/qr/garment-codes`;
       const res = await fetch(url);
       const data = await res.json();
       if (data.status === 'success') {

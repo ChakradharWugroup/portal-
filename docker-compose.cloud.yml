@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  # 1. Unified Django Backend
+  django_backend:
+    build:
+      context: ./django_backend
+    ports:
+      - "8005:8005"
+    restart: unless-stopped
+    command: python manage.py runserver 0.0.0.0:8005
+
+  # 2. Portal Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.cloud
+    ports:
+      - "3004:3004"
+    restart: unless-stopped
+
+  # 3. AI Copilot API
+  ai_copilot:
+    build:
+      context: ./ai-service
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8080

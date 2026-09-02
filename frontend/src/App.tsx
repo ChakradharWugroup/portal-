@@ -1,4 +1,4 @@
-import QRManagementView from './components/QRManagementView';
+﻿import QRManagementView from './components/QRManagementView';
 import { useMsal } from '@azure/msal-react';
 import React, { useState, useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
@@ -341,12 +341,12 @@ const LOCALIZED_ANNOUNCEMENTS: { [key: string]: any[] } = {
 const BACKEND_URL = (import.meta as any).env.VITE_BACKEND_URL || 
   (typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')
     ? 'https://cotton-backend-h674.onrender.com/api'
-    : `http://${typeof window !== 'undefined' ? window.location.hostname : 'localhost'}:8005/api`);
+    : `https://${typeof window !== 'undefined' ? window.location.hostname : 'localhost'}:8445/api`);
 
 const AI_URL = (import.meta as any).env.VITE_AI_URL || 
   (typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')
     ? 'https://cotton-ai-service.onrender.com/api'
-    : `http://${typeof window !== 'undefined' ? window.location.hostname : 'localhost'}:8080/api`);
+    : `https://${typeof window !== 'undefined' ? window.location.hostname : 'localhost'}:8440/api`);
 
 // Static fallbacks for offline mode
 const MOCK_ANNOUNCEMENTS = [
@@ -3246,17 +3246,17 @@ function DashboardView({
         
         {activeSubView === 'nextchat' && (
           <div style={{ height: '80vh', width: '100%', borderRadius: '12px', overflow: 'hidden' }}>
-            <iframe src={`http://localhost:3001/#/?settings=${encodeURIComponent(JSON.stringify({ key: userProfile.email || "kallec@wugroup.co" }))}`} style={{ width: '100%', height: '100%', border: 'none' }} title="NextChat" />
+            <iframe src={`https://${window.location.hostname}:3441/#/?settings=${encodeURIComponent(JSON.stringify({ key: userProfile.email || "kallec@wugroup.co" }))}`} style={{ width: '100%', height: '100%', border: 'none' }} title="NextChat" />
           </div>
         )}
                   {activeSubView === 'meeting-ai' && (
             <div style={{ height: '80vh', width: '100%', borderRadius: '12px', overflow: 'hidden' }}>
-              <iframe src="http://localhost:3000" style={{ width: '100%', height: '100%', border: 'none' }} title="Meeting AI" />
+              <iframe src={`https://${window.location.hostname}:3440`} style={{ width: '100%', height: '100%', border: 'none' }} title="Meeting AI" />
             </div>
           )}
           {activeSubView === 'rvc-studio' && (
             <div style={{ height: '80vh', width: '100%', borderRadius: '12px', overflow: 'hidden' }}>
-              <iframe src="http://localhost:3002" style={{ width: '100%', height: '100%', border: 'none' }} title="RVC Studio" />
+              <iframe src={`https://${window.location.hostname}:3442`} style={{ width: '100%', height: '100%', border: 'none' }} title="RVC Studio" />
             </div>
           )}
         {activeSubView === 'qr-management' && <QRManagementView lang={lang} />}

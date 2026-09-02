@@ -10,7 +10,7 @@ def get_tidb_connection():
         host='gateway01.ap-northeast-1.prod.aws.tidbcloud.com',
         port=4000,
         user='NxhLTE2TjPVqirD.root',
-        password='KJckUcviWksYY09z', # USER MUST UPDATE THIS
+        password='7PkdDwgmEcQQUuRW', # USER MUST UPDATE THIS
         database='test',
         ssl_verify_cert=False,
         ssl_verify_identity=False,
