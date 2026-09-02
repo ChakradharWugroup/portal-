@@ -1,4 +1,4 @@
-ï»¿import QRManagementView from './components/QRManagementView';
+import QRManagementView from './components/QRManagementView';
 import { useMsal } from '@azure/msal-react';
 import React, { useState, useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
@@ -81,8 +81,8 @@ const TRANSLATIONS: { [key: string]: { [key: string]: string } } = {
     internalPortal: "Internal Portal",
     language: "Language",
     english: "English",
-    traditionalChinese: "Traditional Chinese (ç¹é«”ä¸­æ–‡)",
-    simplifiedChinese: "Simplified Chinese (ç®€ä½“ä¸­æ–‡)",
+    traditionalChinese: "Traditional Chinese (ÁcÅé¤¤¤å)",
+    simplifiedChinese: "Simplified Chinese (?Ê^¤¤¤å)",
     internalAnnouncements: "Internal Announcements",
     createAnnouncement: "Create Announcement",
     title: "Title",
@@ -100,223 +100,223 @@ const TRANSLATIONS: { [key: string]: { [key: string]: string } } = {
     postedBy: "Posted by"
   },
   'zh-TW': {
-    dashboard: "å“¡å·¥å„€è¡¨æ¿",
-    announcements: "å…¬å¸å…¬å‘Š",
-    hrServices: "äººäº‹æœå‹™",
-    leave: "è«‹å‡ç®¡ç†",
-    documents: "æ–‡æª”ä¸­å¿ƒ",
-    aiCopilot: "AI æ™ºèƒ½åŠ©æ‰‹",
-    approvals: "å·¥ä½œæµå¯©æ‰¹",
-    erpAccess: "ERP ç³»çµ±æ¥å…¥å£",
-    reports: "å ±è¡¨èˆ‡åˆ†æ",
-    profile: "å€‹äººä¸­å¿ƒ",
-    inventory: "åº«å­˜ç®¡ç†",
-    purchaseOrders: "æ¡è³¼è¨‚å–®",
-    salesOrders: "éŠ·å”®è¨‚å–®",
-    workflows: "å·¥ä½œæµç¨‹é…ç½®",
-    documentAi: "æ–‡æª” AI åˆ†æ",
-    knowledgeBase: "çŸ¥è­˜åº«",
-    erpIntegration: "ERP æ•¸æ“šé›†æˆ",
-    realData: "å¯¦æ™‚æ•¸æ“šæª¢æŸ¥",
-    internalPortal: "ä¼æ¥­å…§éƒ¨å¹³å°",
-    language: "èªè¨€åˆ‡æ›",
+    dashboard: "­û¤u»öªíªO",
+    announcements: "¤½¥q¤½§i",
+    hrServices: "¤H¨ÆªA°È",
+    leave: "½Ğ°²ºŞ²z",
+    documents: "¤åÀÉ¤¤¤ß",
+    aiCopilot: "AI ´¼¯à§U¤â",
+    approvals: "¤u§@¬y¼f§å",
+    erpAccess: "ERP ¨t²Î±µ¤J¤f",
+    reports: "³øªí»P¤ÀªR",
+    profile: "­Ó¤H¤¤¤ß",
+    inventory: "®w¦sºŞ²z",
+    purchaseOrders: "±ÄÁÊ­q³æ",
+    salesOrders: "¾P°â­q³æ",
+    workflows: "¤u§@¬yµ{°t¸m",
+    documentAi: "¤åÀÉ AI ¤ÀªR",
+    knowledgeBase: "ª¾ÃÑ®w",
+    erpIntegration: "ERP ¼Æ¾Ú¶°¦¨",
+    realData: "¹ê®É¼Æ¾ÚÀË¬d",
+    internalPortal: "¥ø·~¤º³¡¥­¥x",
+    language: "»y¨¥¤Á´«",
     english: "English",
-    traditionalChinese: "ç¹é«”ä¸­æ–‡",
-    simplifiedChinese: "ç®€ä½“ä¸­æ–‡",
-    internalAnnouncements: "å…§éƒ¨å…¬å‘Š",
-    createAnnouncement: "ç™¼ä½ˆæ–°å…¬å‘Š",
-    title: "å…¬å‘Šæ¨™é¡Œ",
-    category: "åˆ†é¡ç›®éŒ„",
-    content: "è©³ç´°å…§å®¹",
-    authorName: "ä½œè€…å§“å",
-    postAnnouncement: "é€å‡ºç™¼ä½ˆ",
-    placeholderTitle: "ä¾‹å¦‚ï¼šä¼ºæœå™¨ç¶­è­·é€šçŸ¥",
-    placeholderContent: "è«‹åœ¨æ­¤è¼¸å…¥å…¬å‘Šè©³ç´°å…§å®¹...",
-    filterAll: "å…¨éƒ¨å…¬å‘Š",
-    filterGeneral: "å¸¸è¦",
-    filterHr: "äººäº‹éƒ¨",
-    filterFinance: "è²¡å‹™éƒ¨",
-    filterIt: "è³‡è¨Šéƒ¨",
-    postedBy: "ç™¼ä½ˆè€…ï¼š"
+    traditionalChinese: "ÁcÅé¤¤¤å",
+    simplifiedChinese: "?Ê^¤¤¤å",
+    internalAnnouncements: "¤º³¡¤½§i",
+    createAnnouncement: "µo§G·s¤½§i",
+    title: "¤½§i¼ĞÃD",
+    category: "¤ÀÃş¥Ø¿ı",
+    content: "¸Ô²Ó¤º®e",
+    authorName: "§@ªÌ©m¦W",
+    postAnnouncement: "°e¥Xµo§G",
+    placeholderTitle: "¨Ò¦p¡G¦øªA¾¹ºûÅ@³qª¾",
+    placeholderContent: "½Ğ¦b¦¹¿é¤J¤½§i¸Ô²Ó¤º®e...",
+    filterAll: "¥ş³¡¤½§i",
+    filterGeneral: "±`³W",
+    filterHr: "¤H¨Æ³¡",
+    filterFinance: "°]°È³¡",
+    filterIt: "¸ê°T³¡",
+    postedBy: "µo§GªÌ¡G"
   },
   'zh-CN': {
-    dashboard: "å‘˜å·¥ä»ªè¡¨æ¿",
-    announcements: "å…¬å¸å…¬å‘Š",
-    hrServices: "äººäº‹æœåŠ¡",
-    leave: "è¯·å‡ç®¡ç†",
-    documents: "æ–‡æ¡£ä¸­å¿ƒ",
-    aiCopilot: "AI æ™ºèƒ½åŠ©æ‰‹",
-    approvals: "å·¥ä½œæµå®¡æ‰¹",
-    erpAccess: "ERP ç³»ç»Ÿæ¥å…¥å£",
-    reports: "æŠ¥è¡¨ä¸åˆ†æ",
-    profile: "ä¸ªäººä¸­å¿ƒ",
-    inventory: "åº“å­˜ç®¡ç†",
-    purchaseOrders: "é‡‡è´­è®¢å•",
-    salesOrders: "é”€å”®è®¢å•",
-    workflows: "å·¥ä½œæµç¨‹é…ç½®",
-    documentAi: "æ–‡æ¡£ AI åˆ†æ",
-    knowledgeBase: "çŸ¥è¯†åº“",
-    erpIntegration: "ERP æ•°æ®é›†æˆ",
-    realData: "å®æ—¶æ•°æ®æ£€æŸ¥",
-    internalPortal: "ä¼ä¸šå†…éƒ¨å¹³å°",
-    language: "è¯­è¨€åˆ‡æ¢",
+    dashboard: "?¤u?ªíªO",
+    announcements: "¤½¥q¤½§i",
+    hrServices: "¤H¨ÆªA?",
+    leave: "?°²ºŞ²z",
+    documents: "¤å?¤¤¤ß",
+    aiCopilot: "AI ´¼¯à§U¤â",
+    approvals: "¤u§@¬y?§å",
+    erpAccess: "ERP ¨t?±µ¤J¤f",
+    reports: "?ªíÉO¤ÀªR",
+    profile: "?¤H¤¤¤ß",
+    inventory: "?¦sºŞ²z",
+    purchaseOrders: "ªö???",
+    salesOrders: "?°â??",
+    workflows: "¤u§@¬yµ{°t¸m",
+    documentAi: "¤å? AI ¤ÀªR",
+    knowledgeBase: "ª¾??",
+    erpIntegration: "ERP ?Õu¶°¦¨",
+    realData: "???Õu?¬d",
+    internalPortal: "¥ø??³¡¥­¥x",
+    language: "?¨¥¤Á?",
     english: "English",
-    traditionalChinese: "ç¹é«”ä¸­æ–‡",
-    simplifiedChinese: "ç®€ä½“ä¸­æ–‡",
-    internalAnnouncements: "å†…éƒ¨å…¬å‘Š",
-    createAnnouncement: "å‘å¸ƒæ–°å…¬å‘Š",
-    title: "å…¬å‘Šæ ‡é¢˜",
-    category: "åˆ†ç±»ç›®å½•",
-    content: "è¯¦ç»†å†…å®¹",
-    authorName: "ä½œè€…å§“å",
-    postAnnouncement: "ç¡®è®¤å‘å¸ƒ",
-    placeholderTitle: "ä¾‹å¦‚ï¼šæœåŠ¡å™¨ç»´æŠ¤é€šçŸ¥",
-    placeholderContent: "è¯·åœ¨æ­¤è¾“å…¥å…¬å‘Šè¯¦ç»†å†…å®¹...",
-    filterAll: "å…¨éƒ¨å…¬å‘Š",
-    filterGeneral: "å¸¸è§„",
-    filterHr: "äººäº‹éƒ¨",
-    filterFinance: "è´¢åŠ¡éƒ¨",
-    filterIt: "èµ„è®¯éƒ¨",
-    postedBy: "å‘å¸ƒè€…ï¼š"
+    traditionalChinese: "ÁcÅé¤¤¤å",
+    simplifiedChinese: "?Ê^¤¤¤å",
+    internalAnnouncements: "?³¡¤½§i",
+    createAnnouncement: "?¥¬·s¤½§i",
+    title: "¤½§i??",
+    category: "¤À?¥Ø?",
+    content: "???®e",
+    authorName: "§@ªÌ©m¦W",
+    postAnnouncement: "ÚÌ??¥¬",
+    placeholderTitle: "¨Ò¦p¡GªA?¾¹??³qª¾",
+    placeholderContent: "?¦b¦¹?¤J¤½§i???®e...",
+    filterAll: "¥ş³¡¤½§i",
+    filterGeneral: "±`?",
+    filterHr: "¤H¨Æ³¡",
+    filterFinance: "??³¡",
+    filterIt: "??³¡",
+    postedBy: "?¥¬ªÌ¡G"
   }
 };
 
 const DICTIONARY: { [key: string]: { [key: string]: string } } = {
   // General & Layout
-  "Smart Enterprise AI Platform": { "zh-TW": "æ™ºèƒ½ä¼æ¥­ AI å¹³å°", "zh-CN": "æ™ºèƒ½ä¼ä¸š AI å¹³å°" },
-  "Internal Portal": { "zh-TW": "å…§éƒ¨ä¼æ¥­é–€æˆ¶", "zh-CN": "å†…éƒ¨ä¼ä¸šé—¨æˆ·" },
-  "Search...": { "zh-TW": "æœå°‹...", "zh-CN": "æœç´¢..." },
-  "Search employee or position...": { "zh-TW": "æœå°‹å“¡å·¥å§“åæˆ–è·ä½...", "zh-CN": "æœç´¢å‘˜å·¥å§“åæˆ–èŒä½..." },
-  "Welcome to Cotton Republic Portal": { "zh-TW": "æ­¡è¿ä¾†åˆ°æ£‰èŠ±å…±å’Œåœ‹é–€æˆ¶", "zh-CN": "æ¬¢è¿æ¥åˆ°æ£‰èŠ±å…±å’Œå›½é—¨æˆ·" },
-  "Dah Je Co LTD (å¤§å‚‘æœ‰é™å…¬å¸) â€¢ Smart Enterprise AI Platform": { "zh-TW": "å¤§å‚‘æœ‰é™å…¬å¸ â€¢ æ™ºèƒ½ä¼æ¥­ AI å¹³å°", "zh-CN": "å¤§æ°æœ‰é™å…¬å¸ â€¢ æ™ºèƒ½ä¼ä¸š AI å¹³å°" },
+  "Smart Enterprise AI Platform": { "zh-TW": "´¼¯à¥ø·~ AI ¥­¥x", "zh-CN": "´¼¯à¥ø? AI ¥­¥x" },
+  "Internal Portal": { "zh-TW": "¤º³¡¥ø·~ªù¤á", "zh-CN": "?³¡¥ø???" },
+  "Search...": { "zh-TW": "·j´M...", "zh-CN": "·j¯Á..." },
+  "Search employee or position...": { "zh-TW": "·j´M­û¤u©m¦W©ÎÂ¾¦ì...", "zh-CN": "·j¯Á?¤u©m¦W©Î?¦ì..." },
+  "Welcome to Cotton Republic Portal": { "zh-TW": "Åwªï¨Ó¨ì´Öªá¦@©M°êªù¤á", "zh-CN": "?ªï?¨ì´Öªá¦@©M???" },
+  "Dah Je Co LTD (¤j³Ç¦³­­¤½¥q) ¡E Smart Enterprise AI Platform": { "zh-TW": "¤j³Ç¦³­­¤½¥q ¡E ´¼¯à¥ø·~ AI ¥­¥x", "zh-CN": "¤jªN¦³­­¤½¥q ¡E ´¼¯à¥ø? AI ¥­¥x" },
 
   // Dashboard Indicators
-  "Total POs": { "zh-TW": "æ¡è³¼å–®ç¸½æ•¸", "zh-CN": "é‡‡è´­å•æ€»æ•°" },
-  "Total SOs": { "zh-TW": "éŠ·å”®å–®ç¸½æ•¸", "zh-CN": "é”€å”®å•æ€»æ•°" },
-  "Inventory Items": { "zh-TW": "åº«å­˜å“é …ç¸½è¨ˆ", "zh-CN": "åº“å­˜å“é¡¹æ€»è®¡" },
-  "Low Stock Alerts": { "zh-TW": "ä½åº«å­˜è­¦è­¦å ±", "zh-CN": "ä½åº“å­˜è­¦è­¦æŠ¥" },
-  "Low Stock Items": { "zh-TW": "ä½åº«å­˜å“é …", "zh-CN": "ä½åº“å­˜å“é¡¹" },
+  "Total POs": { "zh-TW": "±ÄÁÊ³æÁ`¼Æ", "zh-CN": "ªö????" },
+  "Total SOs": { "zh-TW": "¾P°â³æÁ`¼Æ", "zh-CN": "?°â???" },
+  "Inventory Items": { "zh-TW": "®w¦s«~¶µÁ`­p", "zh-CN": "?¦s«~???" },
+  "Low Stock Alerts": { "zh-TW": "§C®w¦sÄµÄµ³ø", "zh-CN": "§C?¦sÄµÄµ?" },
+  "Low Stock Items": { "zh-TW": "§C®w¦s«~¶µ", "zh-CN": "§C?¦s«~?" },
   
   // HR Services
-  "HR Services & Contacts": { "zh-TW": "äººäº‹æœå‹™èˆ‡è¯çµ¡çª—å£", "zh-CN": "äººäº‹æœåŠ¡ä¸è”ç»œçª—å£" },
-  "Employee Directory (Kaggle HR Dataset)": { "zh-TW": "å“¡å·¥åå†Š (Kaggle HR æ•¸æ“šé›†)", "zh-CN": "å‘˜å·¥åå†Œ (Kaggle HR æ•°æ®é›†)" },
-  "All Departments": { "zh-TW": "æ‰€æœ‰éƒ¨é–€", "zh-CN": "æ‰€æœ‰éƒ¨é—¨" },
-  "HR Director": { "zh-TW": "äººäº‹ç¸½ç›£", "zh-CN": "äººäº‹æ€»ç›‘" },
-  "Recruitment Manager": { "zh-TW": "æ‹›è˜ç¶“ç†", "zh-CN": "æ‹›è˜ç»ç†" },
-  "Employee Relations": { "zh-TW": "å“¡å·¥é—œä¿‚å°ˆå“¡", "zh-CN": "å‘˜å·¥å…³ç³»ä¸“å‘˜" },
-  "Dept:": { "zh-TW": "éƒ¨é–€:", "zh-CN": "éƒ¨é—¨:" },
-  "Salary:": { "zh-TW": "è–ªè³‡:", "zh-CN": "è–ªèµ„:" },
-  "Manager:": { "zh-TW": "ç›´å±¬ä¸»ç®¡:", "zh-CN": "ç›´å±ä¸»ç®¡:" },
-  "Hired:": { "zh-TW": "å…¥è·æ—¥æœŸ:", "zh-CN": "å…¥èŒæ—¥æœŸ:" },
-  "Absences:": { "zh-TW": "ç¼ºå‹¤å¤©æ•¸:", "zh-CN": "ç¼ºå‹¤å¤©æ•°:" },
-  "Satisfaction:": { "zh-TW": "æ»¿æ„åº¦è©•åˆ†:", "zh-CN": "æ»¡æ„åº¦è¯„åˆ†:" },
-  "Fully Meets": { "zh-TW": "ç¬¦åˆé æœŸæŒ‡æ¨™", "zh-CN": "ç¬¦åˆé¢„æœŸæŒ‡æ ‡" },
-  "Exceeds": { "zh-TW": "è¶…å‡ºé æœŸè¡¨ç¾", "zh-CN": "è¶…å‡ºé¢„æœŸè¡¨ç°" },
+  "HR Services & Contacts": { "zh-TW": "¤H¨ÆªA°È»PÁpµ¸µ¡¤f", "zh-CN": "¤H¨ÆªA?ÉO??µ¡¤f" },
+  "Employee Directory (Kaggle HR Dataset)": { "zh-TW": "­û¤u¦W¥U (Kaggle HR ¼Æ¾Ú¶°)", "zh-CN": "?¤u¦W? (Kaggle HR ?Õu¶°)" },
+  "All Departments": { "zh-TW": "©Ò¦³³¡ªù", "zh-CN": "©Ò¦³³¡?" },
+  "HR Director": { "zh-TW": "¤H¨ÆÁ`ºÊ", "zh-CN": "¤H¨Æ??" },
+  "Recruitment Manager": { "zh-TW": "©Û¸u¸g²z", "zh-CN": "©Û¸u?²z" },
+  "Employee Relations": { "zh-TW": "­û¤uÃö«Y±M­û", "zh-CN": "?¤u?¨t??" },
+  "Dept:": { "zh-TW": "³¡ªù:", "zh-CN": "³¡?:" },
+  "Salary:": { "zh-TW": "Á~¸ê:", "zh-CN": "Á~?:" },
+  "Manager:": { "zh-TW": "ª½Äİ¥DºŞ:", "zh-CN": "ª½?¥DºŞ:" },
+  "Hired:": { "zh-TW": "¤JÂ¾¤é´Á:", "zh-CN": "¤J?¤é´Á:" },
+  "Absences:": { "zh-TW": "¯Ê¶Ô¤Ñ¼Æ:", "zh-CN": "¯Ê¶Ô¤Ñ?:" },
+  "Satisfaction:": { "zh-TW": "º¡·N«×µû¤À:", "zh-CN": "?·N«×?¤À:" },
+  "Fully Meets": { "zh-TW": "²Å¦X¹w´Á«ü¼Ğ", "zh-CN": "²Å¦X?´Á«ü?" },
+  "Exceeds": { "zh-TW": "¶W¥X¹w´Áªí²{", "zh-CN": "¶W¥X?´Áªí?" },
 
   // Leave Management
-  "Submit Leave Request": { "zh-TW": "æäº¤è«‹å‡ç”³è«‹è¡¨æ ¼", "zh-CN": "æäº¤è¯·å‡ç”³è¯·è¡¨æ ¼" },
-  "Leave Type": { "zh-TW": "è«‹å‡å‡åˆ¥é¡å‹", "zh-CN": "è¯·å‡å‡åˆ«ç±»å‹" },
-  "Annual Leave": { "zh-TW": "ç‰¹ä¼‘/å¹´å‡", "zh-CN": "ç‰¹ä¼‘/å¹´å‡" },
-  "Sick Leave": { "zh-TW": "ç—…å‡", "zh-CN": "ç—…å‡" },
-  "Personal Leave": { "zh-TW": "äº‹å‡", "zh-CN": "äº‹å‡" },
-  "Start Date": { "zh-TW": "é–‹å§‹è«‹å‡æ—¥æœŸ", "zh-CN": "å¼€å§‹è¯·å‡æ—¥æœŸ" },
-  "End Date": { "zh-TW": "çµæŸè«‹å‡æ—¥æœŸ", "zh-CN": "ç»“æŸè¯·å‡æ—¥æœŸ" },
-  "Reason": { "zh-TW": "è©³ç´°è«‹å‡åŸå› ", "zh-CN": "è¯¦ç»†è¯·å‡åŸå› " },
-  "Brief details...": { "zh-TW": "è«‹åœ¨æ­¤è¼¸å…¥è«‹å‡äº‹ç”±ç°¡è¿°...", "zh-CN": "è¯·åœ¨æ­¤è¾“å…¥è¯·å‡äº‹ç”±ç®€è¿°..." },
-  "Submit Request": { "zh-TW": "ç¢ºå®šé€å‡ºç”³è«‹", "zh-CN": "ç¡®å®šé€å‡ºç”³è¯·" },
-  "Your Leave Requests History": { "zh-TW": "æ‚¨çš„è«‹å‡ç”³è«‹æ­·å²è¨˜éŒ„", "zh-CN": "æ‚¨çš„è¯·å‡ç”³è¯·å†å²è®°å½•" },
-  "Employee": { "zh-TW": "ç”³è«‹å“¡å·¥å§“å", "zh-CN": "ç”³è¯·å‘˜å·¥å§“å" },
-  "Type": { "zh-TW": "å‡åˆ¥é¡å‹", "zh-CN": "å‡åˆ«ç±»å‹" },
-  "Status": { "zh-TW": "å¯©æ‰¹ç‹€æ…‹", "zh-CN": "å®¡æ‰¹çŠ¶æ€" },
-  "Comments": { "zh-TW": "å¯©æŸ¥ä¸»ç®¡è©•èª", "zh-CN": "å®¡æŸ¥ä¸»ç®¡è¯„è¯­" },
-  "Pending": { "zh-TW": "å¯©æ ¸ä¸­", "zh-CN": "å®¡æ ¸ä¸­" },
-  "Approved": { "zh-TW": "å¯©æ‰¹å·²æ ¸å‡†", "zh-CN": "å®¡æ‰¹å·²æ ¸å‡†" },
+  "Submit Leave Request": { "zh-TW": "´£¥æ½Ğ°²¥Ó½Ğªí®æ", "zh-CN": "´£¥æ?°²¥Ó?ªí®æ" },
+  "Leave Type": { "zh-TW": "½Ğ°²°²§OÃş«¬", "zh-CN": "?°²°²??«¬" },
+  "Annual Leave": { "zh-TW": "¯S¥ğ/¦~°²", "zh-CN": "¯S¥ğ/¦~°²" },
+  "Sick Leave": { "zh-TW": "¯f°²", "zh-CN": "¯f°²" },
+  "Personal Leave": { "zh-TW": "¨Æ°²", "zh-CN": "¨Æ°²" },
+  "Start Date": { "zh-TW": "¶}©l½Ğ°²¤é´Á", "zh-CN": "?©l?°²¤é´Á" },
+  "End Date": { "zh-TW": "µ²§ô½Ğ°²¤é´Á", "zh-CN": "?§ô?°²¤é´Á" },
+  "Reason": { "zh-TW": "¸Ô²Ó½Ğ°²­ì¦]", "zh-CN": "???°²­ì¦]" },
+  "Brief details...": { "zh-TW": "½Ğ¦b¦¹¿é¤J½Ğ°²¨Æ¥ÑÂ²­z...", "zh-CN": "?¦b¦¹?¤J?°²¨Æ¥Ñ?­z..." },
+  "Submit Request": { "zh-TW": "½T©w°e¥X¥Ó½Ğ", "zh-CN": "ÚÌ©w°e¥X¥Ó?" },
+  "Your Leave Requests History": { "zh-TW": "±zªº½Ğ°²¥Ó½Ğ¾ú¥v°O¿ı", "zh-CN": "±zªº?°²¥Ó??¥v??" },
+  "Employee": { "zh-TW": "¥Ó½Ğ­û¤u©m¦W", "zh-CN": "¥Ó??¤u©m¦W" },
+  "Type": { "zh-TW": "°²§OÃş«¬", "zh-CN": "°²??«¬" },
+  "Status": { "zh-TW": "¼f§åª¬ºA", "zh-CN": "?§å??" },
+  "Comments": { "zh-TW": "¼f¬d¥DºŞµû»y", "zh-CN": "?¬d¥DºŞ??" },
+  "Pending": { "zh-TW": "¼f®Ö¤¤", "zh-CN": "?®Ö¤¤" },
+  "Approved": { "zh-TW": "¼f§å¤w®Ö­ã", "zh-CN": "?§å¤w®Ö­ã" },
 
   // Document Center
-  "Uploaded Documents": { "zh-TW": "å·²ä¸Šå‚³å­˜æª”æ–‡ä»¶", "zh-CN": "å·²ä¸Šä¼ å­˜æ¡£æ–‡ä»¶" },
-  "Upload Document": { "zh-TW": "ä¸Šå‚³å­˜æª”æ–°æ–‡ä»¶", "zh-CN": "ä¸Šä¼ å­˜æ¡£æ–°æ–‡ä»¶" },
-  "Document Name": { "zh-TW": "ä¸Šå‚³æ–‡ä»¶åç¨±", "zh-CN": "ä¸Šä¼ æ–‡ä»¶åç§°" },
-  "File Text Content": { "zh-TW": "æ–‡ä»¶æ–‡æœ¬è©³ç´°å…§å®¹", "zh-CN": "æ–‡ä»¶æ–‡æœ¬è¯¦ç»†å†…å®¹" },
-  "Paste document text or invoice values here...": { "zh-TW": "è«‹åœ¨æ­¤è²¼ä¸Šæ–‡ä»¶å…§å®¹æˆ–ç™¼ç¥¨æ•¸å€¼...", "zh-CN": "è¯·åœ¨æ­¤è´´ä¸Šæ–‡ä»¶å†…å®¹æˆ–å‘ç¥¨æ•°å€¼..." },
-  "Save Document": { "zh-TW": "å„²å­˜ä¸¦ä¿å­˜æ–‡ä»¶", "zh-CN": "å‚¨å­˜å¹¶ä¿å­˜æ–‡ä»¶" },
+  "Uploaded Documents": { "zh-TW": "¤w¤W¶Ç¦sÀÉ¤å¥ó", "zh-CN": "¤w¤W?¦s?¤å¥ó" },
+  "Upload Document": { "zh-TW": "¤W¶Ç¦sÀÉ·s¤å¥ó", "zh-CN": "¤W?¦s?·s¤å¥ó" },
+  "Document Name": { "zh-TW": "¤W¶Ç¤å¥ó¦WºÙ", "zh-CN": "¤W?¤å¥ó¦W?" },
+  "File Text Content": { "zh-TW": "¤å¥ó¤å¥»¸Ô²Ó¤º®e", "zh-CN": "¤å¥ó¤å¥»???®e" },
+  "Paste document text or invoice values here...": { "zh-TW": "½Ğ¦b¦¹¶K¤W¤å¥ó¤º®e©Îµo²¼¼Æ­È...", "zh-CN": "?¦b¦¹?¤W¤å¥ó?®e©Î?²¼?­È..." },
+  "Save Document": { "zh-TW": "Àx¦s¨Ã«O¦s¤å¥ó", "zh-CN": "?¦s¦}«O¦s¤å¥ó" },
 
   // Workflow Approvals
-  "Workflow & Request Approvals": { "zh-TW": "å·¥ä½œæµèˆ‡è«‹æ±‚å¯©è¨ˆå¯©æ‰¹", "zh-CN": "å·¥ä½œæµä¸è¯·æ±‚å®¡è®¡å®¡æ‰¹" },
-  "Pending Actions": { "zh-TW": "å¾…è™•ç†å¯©æ ¸é …ç›®", "zh-CN": "å¾…å¤„ç†å®¡æ ¸é¡¹ç›®" },
-  "Approval Audit Logs": { "zh-TW": "å¯©æ ¸æ­·å²å¯©è¨ˆæ—¥èªŒ", "zh-CN": "å®¡æ ¸å†å²å®¡è®¡æ—¥å¿—" },
-  "Task Detail": { "zh-TW": "å¯©æ‰¹ä»»å‹™è©³æƒ…", "zh-CN": "å®¡æ‰¹ä»»åŠ¡è¯¦æƒ…" },
-  "Requested By": { "zh-TW": "ç”³è«‹äººå§“å", "zh-CN": "ç”³è¯·äººå§“å" },
-  "Date": { "zh-TW": "ç”³è«‹æ—¥æœŸæ™‚é–“", "zh-CN": "ç”³è¯·æ—¥æœŸæ—¶é—´" },
-  "Outcome": { "zh-TW": "å¯©æŸ¥çµæœ", "zh-CN": "å®¡æŸ¥ç»“æœ" },
-  "Approve": { "zh-TW": "å¯©æŸ¥åŒæ„æ ¸å‡†", "zh-CN": "å®¡æŸ¥åŒæ„æ ¸å‡†" },
-  "Reject": { "zh-TW": "æ‹’çµ•é§å›é€€å›", "zh-CN": "æ‹’ç»é©³å›é€€å›" },
-  "Enter approval note / REJECTION reason (Mandatory)": { "zh-TW": "è«‹è¼¸å…¥å¯©æ‰¹æ„è¦‹æˆ–æ‹’çµ•åŸå› (å¿…å¡«)", "zh-CN": "è¯·è¾“å…¥å®¡æ‰¹æ„è§æˆ–æ‹’ç»åŸå› (å¿…å¡«)" },
+  "Workflow & Request Approvals": { "zh-TW": "¤u§@¬y»P½Ğ¨D¼f­p¼f§å", "zh-CN": "¤u§@¬yÉO?¨D???§å" },
+  "Pending Actions": { "zh-TW": "«İ³B²z¼f®Ö¶µ¥Ø", "zh-CN": "«İ?²z?®Ö?¥Ø" },
+  "Approval Audit Logs": { "zh-TW": "¼f®Ö¾ú¥v¼f­p¤é»x", "zh-CN": "?®Ö?¥v??¤é§Ó" },
+  "Task Detail": { "zh-TW": "¼f§å¥ô°È¸Ô±¡", "zh-CN": "?§å¥ô??±¡" },
+  "Requested By": { "zh-TW": "¥Ó½Ğ¤H©m¦W", "zh-CN": "¥Ó?¤H©m¦W" },
+  "Date": { "zh-TW": "¥Ó½Ğ¤é´Á®É¶¡", "zh-CN": "¥Ó?¤é´Á??" },
+  "Outcome": { "zh-TW": "¼f¬dµ²ªG", "zh-CN": "?¬d?ªG" },
+  "Approve": { "zh-TW": "¼f¬d¦P·N®Ö­ã", "zh-CN": "?¬d¦P·N®Ö­ã" },
+  "Reject": { "zh-TW": "©Úµ´»é¦^°h¦^", "zh-CN": "©Ú??¦^°h¦^" },
+  "Enter approval note / REJECTION reason (Mandatory)": { "zh-TW": "½Ğ¿é¤J¼f§å·N¨£©Î©Úµ´­ì¦](¥²¶ñ)", "zh-CN": "??¤J?§å·N?©Î©Ú?­ì¦](¥²¶ñ)" },
 
   // ERP Access
-  "ERP / MES Integration Center": { "zh-TW": "ERP / MES ç³»çµ±é›†æˆæ§åˆ¶ä¸­å¿ƒ", "zh-CN": "ERP / MES ç³»ç»Ÿé›†æˆæ§åˆ¶ä¸­å¿ƒ" },
-  "Material & Inventory (MES)": { "zh-TW": "ç‰©æ–™èˆ‡åº«å­˜ç®¡ç†ç³»çµ± (MES)", "zh-CN": "ç‰©æ–™ä¸åº“å­˜ç®¡ç†ç³»ç»Ÿ (MES)" },
-  "Procurement (Purchase Orders)": { "zh-TW": "æ¡è³¼ä¾›æ‡‰éˆæ¨¡çµ„ (æ¡è³¼å–®)", "zh-CN": "é‡‡è´­ä¾›åº”é“¾æ¨¡ç»„ (é‡‡è´­å•)" },
-  "Finance & Sales (SO)": { "zh-TW": "è²¡å‹™èˆ‡éŠ·å”®æ¨¡çµ„ (éŠ·å”®å–®)", "zh-CN": "è´¢åŠ¡ä¸é”€å”®æ¨¡ç»„ (é”€å”®å•)" },
-  "Active ERP Gateway Status": { "zh-TW": "æ´»èº ERP ç¶²é—œé€šè¨Šç‹€æ…‹", "zh-CN": "æ´»è·ƒ ERP ç½‘å…³é€šè®¯çŠ¶æ€" },
-  "SAP ERP Financials Gateway": { "zh-TW": "SAP ERP è²¡å‹™ç¸½è³¬ç¶²é—œ", "zh-CN": "SAP ERP è´¢åŠ¡æ€»è´¦ç½‘å…³" },
-  "Production MES Floor Scheduler": { "zh-TW": "MES ç”Ÿç”¢è»Šé–“æ’ç¨‹èª¿åº¦å™¨", "zh-CN": "MES ç”Ÿäº§è½¦é—´æ’ç¨‹è°ƒåº¦å™¨" },
-  "Workday HR Employee Database Sync": { "zh-TW": "Workday äººåŠ›è³‡æºæ•¸æ“šåº«åŒæ­¥", "zh-CN": "Workday äººåŠ›èµ„æºæ•°æ®åº“åŒæ­¥" },
-  "Legacy Warehouse WMS API": { "zh-TW": "å‚³çµ±å€‰åº«ç®¡ç† (WMS) é€£æ¥åŸ ", "zh-CN": "ä¼ ç»Ÿä»“åº“ç®¡ç† (WMS) è¿æ¥å£" },
-  "Connected": { "zh-TW": "é€šè¨Šå·²é€£æ¥", "zh-CN": "é€šè®¯å·²è¿æ¥" },
-  "Maintenance": { "zh-TW": "ç¶­è­·ä¿é¤Šä¸­", "zh-CN": "ç»´æŠ¤ä¿å…»ä¸­" },
+  "ERP / MES Integration Center": { "zh-TW": "ERP / MES ¨t²Î¶°¦¨±±¨î¤¤¤ß", "zh-CN": "ERP / MES ¨t?¶°¦¨±±¨î¤¤¤ß" },
+  "Material & Inventory (MES)": { "zh-TW": "ª«®Æ»P®w¦sºŞ²z¨t²Î (MES)", "zh-CN": "ª«®ÆÉO?¦sºŞ²z¨t? (MES)" },
+  "Procurement (Purchase Orders)": { "zh-TW": "±ÄÁÊ¨ÑÀ³Ãì¼Ò²Õ (±ÄÁÊ³æ)", "zh-CN": "ªö?¨Ñ??¼Ò? (ªö??)" },
+  "Finance & Sales (SO)": { "zh-TW": "°]°È»P¾P°â¼Ò²Õ (¾P°â³æ)", "zh-CN": "??ÉO?°â¼Ò? (?°â?)" },
+  "Active ERP Gateway Status": { "zh-TW": "¬¡ÅD ERP ºôÃö³q°Tª¬ºA", "zh-CN": "¬¡? ERP ÊI?³q???" },
+  "SAP ERP Financials Gateway": { "zh-TW": "SAP ERP °]°ÈÁ`½ãºôÃö", "zh-CN": "SAP ERP ????ÊI?" },
+  "Production MES Floor Scheduler": { "zh-TW": "MES ¥Í²£¨®¶¡±Æµ{½Õ«×¾¹", "zh-CN": "MES ¥Í???±Æµ{?«×¾¹" },
+  "Workday HR Employee Database Sync": { "zh-TW": "Workday ¤H¤O¸ê·½¼Æ¾Ú®w¦P¨B", "zh-CN": "Workday ¤H¤O?·½?Õu?¦P¨B" },
+  "Legacy Warehouse WMS API": { "zh-TW": "¶Ç²Î­Ü®wºŞ²z (WMS) ³s±µ°ğ", "zh-CN": "????ºŞ²z (WMS) ?±µ¤f" },
+  "Connected": { "zh-TW": "³q°T¤w³s±µ", "zh-CN": "³q?¤w?±µ" },
+  "Maintenance": { "zh-TW": "ºûÅ@«O¾i¤¤", "zh-CN": "??«O?¤¤" },
 
   // Workflows View
-  "Defined Enterprise Workflows": { "zh-TW": "å·²å®šç¾©ä¹‹ä¼æ¥­å·¥ä½œæµ", "zh-CN": "å·²å®šä¹‰ä¹‹ä¼ä¸šå·¥ä½œæµ" },
-  "Leave Approval Protocol": { "zh-TW": "è«‹å‡å¯©æ‰¹æµç¨‹å”è­°", "zh-CN": "è¯·å‡å®¡æ‰¹æµç¨‹åè®®" },
-  "Procurement Capex Approval": { "zh-TW": "æ¡è³¼è³‡æœ¬æ”¯å‡ºå¯©æ‰¹", "zh-CN": "é‡‡è´­èµ„æœ¬æ”¯å‡ºå®¡æ‰¹" },
-  "New Vendor Onboarding Policy": { "zh-TW": "æ–°ä¾›æ‡‰å•†å…¥é§æ”¿ç­–æµç¨‹", "zh-CN": "æ–°ä¾›åº”å•†å…¥é©»æ”¿ç­–æµç¨‹" },
-  "2-step validation": { "zh-TW": "å…©éšæ®µé©—è­‰", "zh-CN": "ä¸¤é˜¶æ®µéªŒè¯" },
-  "3-step budget check": { "zh-TW": "ä¸‰éšæ®µé ç®—å¯©æŸ¥", "zh-CN": "ä¸‰é˜¶æ®µé¢„ç®—å®¡æŸ¥" },
-  "1-step contract check": { "zh-TW": "å–®éšæ®µåˆç´„æ ¸å°", "zh-CN": "å•é˜¶æ®µåˆçº¦æ ¸å¯¹" },
+  "Defined Enterprise Workflows": { "zh-TW": "¤w©w¸q¤§¥ø·~¤u§@¬y", "zh-CN": "¤w©w?¤§¥ø?¤u§@¬y" },
+  "Leave Approval Protocol": { "zh-TW": "½Ğ°²¼f§å¬yµ{¨óÄ³", "zh-CN": "?°²?§å¬yµ{??" },
+  "Procurement Capex Approval": { "zh-TW": "±ÄÁÊ¸ê¥»¤ä¥X¼f§å", "zh-CN": "ªö??¥»¤ä¥X?§å" },
+  "New Vendor Onboarding Policy": { "zh-TW": "·s¨ÑÀ³°Ó¤J¾n¬Fµ¦¬yµ{", "zh-CN": "·s¨Ñ?°Ó¤J?¬Fµ¦¬yµ{" },
+  "2-step validation": { "zh-TW": "¨â¶¥¬qÅçÃÒ", "zh-CN": "??¬q??" },
+  "3-step budget check": { "zh-TW": "¤T¶¥¬q¹wºâ¼f¬d", "zh-CN": "¤T?¬q?ºâ?¬d" },
+  "1-step contract check": { "zh-TW": "³æ¶¥¬q¦X¬ù®Ö¹ï", "zh-CN": "??¬q¦X?®Ö?" },
 
   // Document AI View
-  "OCR Document Parsing (FastAPI Document AI)": { "zh-TW": "OCR æ–‡ä»¶æ™ºèƒ½è§£æ (FastAPI Document AI)", "zh-CN": "OCR æ–‡ä»¶æ™ºèƒ½è§£æ (FastAPI Document AI)" },
+  "OCR Document Parsing (FastAPI Document AI)": { "zh-TW": "OCR ¤å¥ó´¼¯à¸ÑªR (FastAPI Document AI)", "zh-CN": "OCR ¤å¥ó´¼¯à¸ÑªR (FastAPI Document AI)" },
   "Paste invoice texts, shipping slip data, or employee memos to trigger automated entity extraction and summaries via AI.": {
-    "zh-TW": "è«‹åœ¨ä¸‹æ–¹è²¼ä¸Šç™¼ç¥¨æ–‡æœ¬ã€å‡ºè²¨å–®æ•¸æ“šæˆ–å“¡å·¥å‚™å¿˜éŒ„ï¼Œä»¥è§¸ç™¼ AI è‡ªå‹•åŒ–å¯¦é«”æå–èˆ‡æ‘˜è¦ã€‚",
-    "zh-CN": "è¯·åœ¨ä¸‹æ–¹è´´ä¸Šå‘ç¥¨æ–‡æœ¬ã€å‡ºè´§å•æ•°æ®æˆ–å‘˜å·¥å¤‡å¿˜å½•ï¼Œä»¥è§¦å‘ AI è‡ªåŠ¨åŒ–å®ä½“æå–ä¸æ‘˜è¦ã€‚"
+    "zh-TW": "½Ğ¦b¤U¤è¶K¤Wµo²¼¤å¥»¡B¥X³f³æ¼Æ¾Ú©Î­û¤u³Æ§Ñ¿ı¡A¥HÄ²µo AI ¦Û°Ê¤Æ¹êÅé´£¨ú»PºK­n¡C",
+    "zh-CN": "?¦b¤U¤è?¤W?²¼¤å¥»¡B¥X???Õu©Î?¤u?§Ñ?¡A¥HàD? AI ¦Û?¤Æ?Ê^´£¨úÉOºK­n¡C"
   },
-  "Extract Entities & Summary": { "zh-TW": "é–‹å§‹æå–å¯¦é«”èˆ‡æ‘˜è¦", "zh-CN": "å¼€å§‹æå–å®ä½“ä¸æ‘˜è¦" },
-  "AI Extraction Results": { "zh-TW": "AI æ•¸æ“šæå–åˆ†æçµæœ", "zh-CN": "AI æ•°æ®æå–åˆ†æç»“æœ" },
-  "Submit raw text in the left panel to review extracted details.": { "zh-TW": "è«‹åœ¨å·¦å´é¢æ¿æäº¤åŸå§‹æ–‡æœ¬ä»¥æŸ¥çœ‹æå–çš„è©³ç´°è³‡è¨Šã€‚", "zh-CN": "è¯·åœ¨å·¦ä¾§é¢æ¿æäº¤åŸå§‹æ–‡æœ¬ä»¥æŸ¥çœ‹æå–çš„è¯¦ç»†ä¿¡æ¯ã€‚" },
+  "Extract Entities & Summary": { "zh-TW": "¶}©l´£¨ú¹êÅé»PºK­n", "zh-CN": "?©l´£¨ú?Ê^ÉOºK­n" },
+  "AI Extraction Results": { "zh-TW": "AI ¼Æ¾Ú´£¨ú¤ÀªRµ²ªG", "zh-CN": "AI ?Õu´£¨ú¤ÀªR?ªG" },
+  "Submit raw text in the left panel to review extracted details.": { "zh-TW": "½Ğ¦b¥ª°¼­±ªO´£¥æ­ì©l¤å¥»¥H¬d¬İ´£¨úªº¸Ô²Ó¸ê°T¡C", "zh-CN": "?¦b¥ª?­±ªO´£¥æ­ì©l¤å¥»¥H¬d¬İ´£¨úªº??«H®§¡C" },
 
   // Knowledge Base View
-  "Articles": { "zh-TW": "ä¼æ¥­çŸ¥è­˜åº«æ–‡ç« ", "zh-CN": "ä¼ä¸šçŸ¥è¯†åº“æ–‡ç« " },
-  "Cotton Republic Head Office Info": { "zh-TW": "æ£‰èŠ±å…±å’Œåœ‹ç¸½éƒ¨è³‡è¨ŠæŒ‡å—", "zh-CN": "æ£‰èŠ±å…±å’Œå›½æ€»éƒ¨èµ„è®¯æŒ‡å—" },
-  "Travel Disposable Underwear Tech Specs": { "zh-TW": "æ—…è¡Œä¸€æ¬¡æ€§å…§è¡£æŠ€è¡“è¦æ ¼èªªæ˜", "zh-CN": "æ—…è¡Œä¸€æ¬¡æ€§å†…è¡£æŠ€æœ¯è§„æ ¼è¯´æ˜" },
-  "How to Submit and Manage Leaves": { "zh-TW": "å¦‚ä½•æäº¤èˆ‡ç®¡ç†æ‚¨çš„è«‹å‡ç”³è«‹", "zh-CN": "å¦‚ä½•æäº¤ä¸ç®¡ç†æ‚¨çš„è¯·å‡ç”³è¯·" },
-  "Add Article": { "zh-TW": "æ–°å¢çŸ¥è­˜åº«æ–‡ç« ", "zh-CN": "æ–°å¢çŸ¥è¯†åº“æ–‡ç« " },
-  "Select an article from the left sidebar to start reading.": { "zh-TW": "è«‹å¾å·¦å´æ¬„é¸æ“‡ä¸€ç¯‡æ–‡ç« é–‹å§‹é–±è®€ã€‚", "zh-CN": "è¯·ä»leftå´æ¬„é€‰æ‹©ä¸€ç¯‡æ–‡ç« å¼€å§‹é˜…è¯»ã€‚" },
-  "Add": { "zh-TW": "ç¢ºå®šæ–°å¢", "zh-CN": "ç¡®å®šæ–°å¢" },
+  "Articles": { "zh-TW": "¥ø·~ª¾ÃÑ®w¤å³¹", "zh-CN": "¥ø?ª¾??¤å³¹" },
+  "Cotton Republic Head Office Info": { "zh-TW": "´Öªá¦@©M°êÁ`³¡¸ê°T«ü«n", "zh-CN": "´Öªá¦@©M??³¡??«ü«n" },
+  "Travel Disposable Underwear Tech Specs": { "zh-TW": "®È¦æ¤@¦¸©Ê¤º¦ç§Ş³N³W®æ»¡©ú", "zh-CN": "®È¦æ¤@¦¸©Ê?¦ç§Ş??®æ?©ú" },
+  "How to Submit and Manage Leaves": { "zh-TW": "¦p¦ó´£¥æ»PºŞ²z±zªº½Ğ°²¥Ó½Ğ", "zh-CN": "¦p¦ó´£¥æÉOºŞ²z±zªº?°²¥Ó?" },
+  "Add Article": { "zh-TW": "·s¼Wª¾ÃÑ®w¤å³¹", "zh-CN": "·s¼Wª¾??¤å³¹" },
+  "Select an article from the left sidebar to start reading.": { "zh-TW": "½Ğ±q¥ª°¼Äæ¿ï¾Ü¤@½g¤å³¹¶}©l¾\Åª¡C", "zh-CN": "??left°¼Äæ??¤@½g¤å³¹?©l??¡C" },
+  "Add": { "zh-TW": "½T©w·s¼W", "zh-CN": "ÚÌ©w·s¼W" },
 
   // Database Sync Control
-  "ERP Database Sync Control": { "zh-TW": "ERP è³‡æ–™åº«åŒæ­¥æ§åˆ¶å°", "zh-CN": "ERP æ•°æ®åº“åŒæ­¥æ§åˆ¶å°" },
-  "Database Synchronization Logs": { "zh-TW": "ç³»çµ±è³‡æ–™åº«åŒæ­¥æ—¥èªŒ", "zh-CN": "ç³»ç»Ÿæ•°æ®åº“åŒæ­¥æ—¥å¿—" },
-  "Sync Database Now": { "zh-TW": "ç«‹å³åŸ·è¡Œè³‡æ–™åº«åŒæ­¥", "zh-CN": "ç«‹å³æ‰§è¡Œæ•°æ®åº“åŒæ­¥" },
-  "MES Production": { "zh-TW": "MES ç”Ÿç”¢è£½é€ ç³»çµ±", "zh-CN": "MES ç”Ÿäº§åˆ¶é€ ç³»ç»Ÿ" },
-  "SAP Financials": { "zh-TW": "SAP è²¡å‹™æœƒè¨ˆç³»çµ±", "zh-CN": "SAP è´¢åŠ¡ä¼šè®¡ç³»ç»Ÿ" },
-  "Workday HR DB": { "zh-TW": "Workday äººäº‹è³‡æ–™åº«", "zh-CN": "Workday äººäº‹æ•°æ®åº“" },
-  "Legacy Warehouse WMS": { "zh-TW": "èˆŠæ¬¾å€‰åº« WMS ç³»çµ±", "zh-CN": "æ—§æ¬¾ä»“åº“ WMS ç³»ç»Ÿ" },
-  "30 records": { "zh-TW": "30 ç­†åŒæ­¥è¨˜éŒ„", "zh-CN": "30 ç¬”åŒæ­¥è®°å½•" },
-  "31 records": { "zh-TW": "31 ç­†åŒæ­¥è¨˜éŒ„", "zh-CN": "31 ç¬”åŒæ­¥è®°å½•" },
-  "3 records": { "zh-TW": "3 ç­†åŒæ­¥è¨˜éŒ„", "zh-CN": "3 ç¬”åŒæ­¥è®°å½•" },
-  "Failed": { "zh-TW": "åŒæ­¥å¤±æ•—", "zh-CN": "åŒæ­¥å¤±è´¥" },
-  "Success": { "zh-TW": "åŒæ­¥æˆåŠŸ", "zh-CN": "åŒæ­¥æˆåŠŸ" },
-  "Timestamp": { "zh-TW": "åŒæ­¥æ™‚é–“æˆ³", "zh-CN": "åŒæ­¥æ—¶é—´æˆ³" },
-  "Details": { "zh-TW": "æ—¥èªŒè©³æƒ…", "zh-CN": "æ—¥å¿—è¯¦æƒ…" },
+  "ERP Database Sync Control": { "zh-TW": "ERP ¸ê®Æ®w¦P¨B±±¨î¥x", "zh-CN": "ERP ?Õu?¦P¨B±±¨î¥x" },
+  "Database Synchronization Logs": { "zh-TW": "¨t²Î¸ê®Æ®w¦P¨B¤é»x", "zh-CN": "¨t??Õu?¦P¨B¤é§Ó" },
+  "Sync Database Now": { "zh-TW": "¥ß§Y°õ¦æ¸ê®Æ®w¦P¨B", "zh-CN": "¥ß§Y?¦æ?Õu?¦P¨B" },
+  "MES Production": { "zh-TW": "MES ¥Í²£»s³y¨t²Î", "zh-CN": "MES ¥Í?¨î³y¨t?" },
+  "SAP Financials": { "zh-TW": "SAP °]°È·|­p¨t²Î", "zh-CN": "SAP ????¨t?" },
+  "Workday HR DB": { "zh-TW": "Workday ¤H¨Æ¸ê®Æ®w", "zh-CN": "Workday ¤H¨Æ?Õu?" },
+  "Legacy Warehouse WMS": { "zh-TW": "ÂÂ´Ú­Ü®w WMS ¨t²Î", "zh-CN": "?´Ú?? WMS ¨t?" },
+  "30 records": { "zh-TW": "30 µ§¦P¨B°O¿ı", "zh-CN": "30 ?¦P¨B??" },
+  "31 records": { "zh-TW": "31 µ§¦P¨B°O¿ı", "zh-CN": "31 ?¦P¨B??" },
+  "3 records": { "zh-TW": "3 µ§¦P¨B°O¿ı", "zh-CN": "3 ?¦P¨B??" },
+  "Failed": { "zh-TW": "¦P¨B¥¢±Ñ", "zh-CN": "¦P¨B¥¢?" },
+  "Success": { "zh-TW": "¦P¨B¦¨¥\", "zh-CN": "¦P¨B¦¨¥\" },
+  "Timestamp": { "zh-TW": "¦P¨B®É¶¡ÂW", "zh-CN": "¦P¨B??ÂW" },
+  "Details": { "zh-TW": "¤é»x¸Ô±¡", "zh-CN": "¤é§Ó?±¡" },
 
   // Real Data View
-  "Database Inspector: INVENTORY": { "zh-TW": "è³‡æ–™åº«æª¢æŸ¥å™¨ï¼šå¯¦æ™‚åº«å­˜", "zh-CN": "æ•°æ®åº“æ£€æŸ¥å™¨ï¼šå®æ—¶åº“å­˜" },
-  "Database Tables": { "zh-TW": "ç³»çµ±è³‡æ–™æ•¸æ“šè¡¨", "zh-CN": "ç³»ç»Ÿèµ„æ–™æ•°æ®è¡¨" },
-  "PRODUCT NAME": { "zh-TW": "ç”¢å“å“å", "zh-CN": "äº§å“å“å" },
-  "CATEGORY": { "zh-TW": "å“é¡åˆ†é¡", "zh-CN": "å“ç±»åˆ†ç±»" },
-  "STOCK LEVEL": { "zh-TW": "åº«å­˜æ°´ä½", "zh-CN": "åº“å­˜æ°´ä½" },
-  "PRICE": { "zh-TW": "å–®åƒ¹åƒ¹æ ¼", "zh-CN": "å•ä»·ä»·æ ¼" },
-  "Total Records:": { "zh-TW": "ç¸½è¨˜éŒ„æ•¸:", "zh-CN": "æ€»è®°å½•æ•°:" }
+  "Database Inspector: INVENTORY": { "zh-TW": "¸ê®Æ®wÀË¬d¾¹¡G¹ê®É®w¦s", "zh-CN": "?Õu??¬d¾¹¡G???¦s" },
+  "Database Tables": { "zh-TW": "¨t²Î¸ê®Æ¼Æ¾Úªí", "zh-CN": "¨t??®Æ?Õuªí" },
+  "PRODUCT NAME": { "zh-TW": "²£«~«~¦W", "zh-CN": "?«~«~¦W" },
+  "CATEGORY": { "zh-TW": "«~Ãş¤ÀÃş", "zh-CN": "«~?¤À?" },
+  "STOCK LEVEL": { "zh-TW": "®w¦s¤ô¦ì", "zh-CN": "?¦s¤ô¦ì" },
+  "PRICE": { "zh-TW": "³æ»ù»ù®æ", "zh-CN": "?É²É²®æ" },
+  "Total Records:": { "zh-TW": "Á`°O¿ı¼Æ:", "zh-CN": "????:" }
 };
 
 const LOCALIZED_ANNOUNCEMENTS: { [key: string]: any[] } = {
@@ -326,14 +326,14 @@ const LOCALIZED_ANNOUNCEMENTS: { [key: string]: any[] } = {
     { id: 3, title: 'Welcome to Cotton Republic Portal', content: 'We are thrilled to launch our new Smart Enterprise AI Platform for Cotton Republic (Dah Je Co LTD). This portal centralizes HR services, leave management, real-time ERP/MES access, and features our AI Copilot for operational and logistics insights.', author: 'System Administrator', category: 'General', date: '2026-07-01' }
   ],
   'zh-TW': [
-    { id: 1, title: 'æ··åˆè¾¦å…¬æŒ‡å—æ›´æ–°', content: 'æ ¹æ“šå…¬å¸æœ€æ–°æ”¿ç­–ï¼Œå°åŒ—ç¸½éƒ¨çš„å“¡å·¥æ¯é€±å¯ç”³è«‹æœ€å¤š3å¤©çš„é ç¨‹è¾¦å…¬ã€‚è«‹èˆ‡åœ˜éšŠä¸»ç®¡å”èª¿æ‚¨çš„æ™‚é–“å®‰æ’ï¼Œä¸¦åœ¨äººäº‹æœå‹™ä¸­è¨˜éŒ„ã€‚', author: 'David Vance (HR ä¸»ç®¡)', category: 'HR', date: '2026-07-05' },
-    { id: 2, title: 'ç²¾æ¢³æ£‰ç”Ÿç”¢æ–°ç›®æ¨™', content: 'MES å·¥å» æ­£åœ¨æ“´å¤§åŠŸèƒ½æ€§ä¸€æ¬¡æ€§æ—…è¡Œå…§è¡£ç”¢å“ç·šçš„ç”Ÿç”¢è¦æ¨¡ã€‚è«‹ç¢ºä¿é€šéæ¡è³¼é¸é …å¡è™•ç† A ç´šæ£‰èŠ±åŸææ–™çš„åº«å­˜è¨‚å–®ã€‚', author: 'Sarah Jenkins (è²¡å‹™ç¸½ç›£)', category: 'Finance', date: '2026-07-08' },
-    { id: 3, title: 'æ­¡è¿ä¾†åˆ°æ£‰èŠ±å…±å’Œåœ‹é–€æˆ¶ç¶²ç«™', content: 'æˆ‘å€‘å¾ˆé«˜èˆˆç‚ºæ£‰èŠ±å…±å’Œåœ‹ï¼ˆå¤§æ°æœ‰é™å…¬å¸ï¼‰æ¨å‡ºå…¨æ–°çš„æ™ºèƒ½ä¼æ¥­ AI å¹³å°ã€‚è©²é–€æˆ¶ç¶²ç«™é›†æˆäº†äººäº‹æœå‹™ã€è«‹å‡ç®¡ç†ã€å¯¦æ™‚ ERP/MES è¨ªå•ï¼Œä¸¦æä¾› AI å”åŒåŠ©æ‰‹ä»¥ç²å–é‹ç‡Ÿå’Œç‰©æµæ´å¯Ÿã€‚', author: 'ç³»çµ±ç®¡ç†å“¡', category: 'General', date: '2026-07-01' }
+    { id: 1, title: '²V¦X¿ì¤½«ü«n§ó·s', content: '®Ú¾Ú¤½¥q³Ì·s¬Fµ¦¡A¥x¥_Á`³¡ªº­û¤u¨C¶g¥i¥Ó½Ğ³Ì¦h3¤Ñªº»·µ{¿ì¤½¡C½Ğ»P¹Î¶¤¥DºŞ¨ó½Õ±zªº®É¶¡¦w±Æ¡A¨Ã¦b¤H¨ÆªA°È¤¤°O¿ı¡C', author: 'David Vance (HR ¥DºŞ)', category: 'HR', date: '2026-07-05' },
+    { id: 2, title: 'ºë®Ş´Ö¥Í²£·s¥Ø¼Ğ', content: 'MES ¤u¼t¥¿¦bÂX¤j¥\¯à©Ê¤@¦¸©Ê®È¦æ¤º¦ç²£«~½uªº¥Í²£³W¼Ò¡C½Ğ½T«O³q¹L±ÄÁÊ¿ï¶µ¥d³B²z A ¯Å´Öªá­ì§÷®Æªº®w¦s­q³æ¡C', author: 'Sarah Jenkins (°]°ÈÁ`ºÊ)', category: 'Finance', date: '2026-07-08' },
+    { id: 3, title: 'Åwªï¨Ó¨ì´Öªá¦@©M°êªù¤áºô¯¸', content: '§Ú­Ì«Ü°ª¿³¬°´Öªá¦@©M°ê¡]¤jªN¦³­­¤½¥q¡^±À¥X¥ş·sªº´¼¯à¥ø·~ AI ¥­¥x¡C¸Óªù¤áºô¯¸¶°¦¨¤F¤H¨ÆªA°È¡B½Ğ°²ºŞ²z¡B¹ê®É ERP/MES ³X°İ¡A¨Ã´£¨Ñ AI ¨ó¦P§U¤â¥HÀò¨ú¹BÀç©Mª«¬y¬}¹î¡C', author: '¨t²ÎºŞ²z­û', category: 'General', date: '2026-07-01' }
   ],
   'zh-CN': [
-    { id: 1, title: 'æ··åˆåŠå…¬æŒ‡å—æ›´æ–°', content: 'æ ¹æ®å…¬å¸æœ€æ–°æ”¿ç­–ï¼Œå°åŒ—æ€»éƒ¨çš„å‘˜å·¥æ¯å‘¨å¯ç”³è¯·æœ€å¤š3å¤©çš„è¿œç¨‹åŠå…¬ã€‚è¯·ä¸å›¢é˜Ÿä¸»ç®¡åè°ƒæ‚¨çš„æ—¶é—´å®‰æ’ï¼Œå¹¶åœ¨äººäº‹æœåŠ¡ä¸­è®°å½•ã€‚', author: 'David Vance (HR ä¸»ç®¡)', category: 'HR', date: '2026-07-05' },
-    { id: 2, title: 'ç²¾æ¢³æ£‰ç”Ÿäº§æ–°ç›®æ ‡', content: 'MES å·¥å‚æ­£åœ¨æ‰©å¤§åŠŸèƒ½æ€§ä¸€æ¬¡æ€§æ—…è¡Œå†…è¡£äº§å“çº¿çš„ç”Ÿäº§è§„æ¨¡ã€‚è¯·ç¡®ä¿é€šè¿‡é‡‡è´­é€‰é¡¹å¡å¤„ç† A çº§æ£‰èŠ±åŸææ–™çš„åº“å­˜è®¢å•ã€‚', author: 'Sarah Jenkins (è´¢åŠ¡æ€»ç›‘)', category: 'Finance', date: '2026-07-08' },
-    { id: 3, title: 'æ¬¢è¿æ¥åˆ°æ£‰èŠ±å…±å’Œå›½é—¨æˆ·ç½‘ç«™', content: 'æˆ‘ä»¬å¾ˆé«˜å…´ä¸ºæ£‰èŠ±å…±å’Œå›½ï¼ˆå¤§æ°æœ‰é™å…¬å¸ï¼‰æ¨å‡ºå…¨æ–°çš„æ™ºèƒ½ä¼ä¸š AI å¹³å°ã€‚è¯¥é—¨æˆ·ç½‘ç«™é›†æˆäº†äººäº‹æœåŠ¡ã€è¯·å‡ç®¡ç†ã€å®æ—¶ ERP/MES è®¿é—®ï¼Œå¹¶æä¾› AI ååŒåŠ©æ‰‹ä»¥è·å–è¿è¥å’Œç‰©æµå†…å‚ã€‚', author: 'ç³»ç»Ÿç®¡ç†å‘˜', category: 'General', date: '2026-07-01' }
+    { id: 1, title: '²V¦X?¤½«ü«n§ó·s', content: '®ÚÕu¤½¥q³Ì·s¬Fµ¦¡A¥x¥_?³¡ªº?¤u¨C©P¥i¥Ó?³Ì¦h3¤Ñªº?µ{?¤½¡C?ÉO??¥DºŞ??±zªº??¦w±Æ¡A¦}¦b¤H¨ÆªA?¤¤??¡C', author: 'David Vance (HR ¥DºŞ)', category: 'HR', date: '2026-07-05' },
+    { id: 2, title: 'ºë®Ş´Ö¥Í?·s¥Ø?', content: 'MES ¤uÉD¥¿¦b?¤j¥\¯à©Ê¤@¦¸©Ê®È¦æ?¦ç?«~?ªº¥Í??¼Ò¡C?ÚÌ«O³q?ªö???¥d?²z A ?´Öªá­ì§÷®Æªº?¦s??¡C', author: 'Sarah Jenkins (????)', category: 'Finance', date: '2026-07-08' },
+    { id: 3, title: '?ªï?¨ì´Öªá¦@©M???ÊI¯¸', content: '§Ú?«Ü°ª??´Öªá¦@©M?¡]¤jªN¦³­­¤½¥q¡^±À¥X¥ş·sªº´¼¯à¥ø? AI ¥­¥x¡C???ÊI¯¸¶°¦¨¤F¤H¨ÆªA?¡B?°²ºŞ²z¡B?? ERP/MES ??¡A¦}´£¨Ñ AI ?¦P§U¤â¥H?¨ú??©Mª«¬y??¡C', author: '¨t?ºŞ²z?', category: 'General', date: '2026-07-01' }
   ]
 };
 
@@ -1562,7 +1562,7 @@ export default function App() {
       setIsLoggedIn(true);
       setLoginError('');
     } else {
-      setLoginError(lang === 'en' ? 'Invalid username or password' : 'ç„¡æ•ˆçš„ä½¿ç”¨è€…åç¨±æˆ–å¯†ç¢¼');
+      setLoginError(lang === 'en' ? 'Invalid username or password' : 'µL®Äªº¨Ï¥ÎªÌ¦WºÙ©Î±K½X');
     }
   };
 
@@ -1910,8 +1910,8 @@ export default function App() {
               }}
             >
               <option value="en" style={{ backgroundColor: '#111', color: '#fff' }}>English</option>
-              <option value="zh-TW" style={{ backgroundColor: '#111', color: '#fff' }}>ç¹é«”ä¸­æ–‡ (Traditional)</option>
-              <option value="zh-CN" style={{ backgroundColor: '#111', color: '#fff' }}>ç®€ä½“ä¸­æ–‡ (Simplified)</option>
+              <option value="zh-TW" style={{ backgroundColor: '#111', color: '#fff' }}>ÁcÅé¤¤¤å (Traditional)</option>
+              <option value="zh-CN" style={{ backgroundColor: '#111', color: '#fff' }}>?Ê^¤¤¤å (Simplified)</option>
             </select>
           </div>
 
@@ -1939,7 +1939,7 @@ export default function App() {
               />
               <h2 style={{ fontSize: '1.5rem', fontWeight: 800, letterSpacing: '-0.5px' }}>Dah Je Co LTD</h2>
               <span style={{ fontSize: '0.85rem', color: 'var(--primary)', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>
-                {lang === 'en' ? 'Employee Portal Login' : 'å“¡å·¥ä¼æ¥­é–€æˆ¶ç™»å…¥'}
+                {lang === 'en' ? 'Employee Portal Login' : '­û¤u¥ø·~ªù¤áµn¤J'}
               </span>
             </div>
 
@@ -1985,7 +1985,7 @@ export default function App() {
                 onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 21 21"><path fill="#f35325" d="M0 0h10v10H0z"/><path fill="#81bc06" d="M11 0h10v10H11z"/><path fill="#05a6f0" d="M0 11h10v10H0z"/><path fill="#ffba08" d="M11 11h10v10H11z"/></svg>
-                {lang === 'en' ? 'Sign In with Microsoft' : 'ä½¿ç”¨ Microsoft ç™»å…¥'}
+                {lang === 'en' ? 'Sign In with Microsoft' : '¨Ï¥Î Microsoft µn¤J'}
               </button>
             </form>
 
@@ -2378,7 +2378,7 @@ export default function App() {
                   onClick={(e) => e.stopPropagation()}
                 >
                   <h4 style={{ fontWeight: 600, fontSize: '0.85rem', marginBottom: '0.75rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>
-                    {lang === 'en' ? 'Notifications' : 'ç³»çµ±é€šçŸ¥'}
+                    {lang === 'en' ? 'Notifications' : '¨t²Î³qª¾'}
                   </h4>
                   {workflows.filter(w => w.status === 'Pending').map(w => (
                     <div 
@@ -2422,8 +2422,8 @@ export default function App() {
               }}
             >
               <option value="en" style={{ backgroundColor: '#111' }}>EN</option>
-              <option value="zh-TW" style={{ backgroundColor: '#111' }}>ç¹é«”</option>
-              <option value="zh-CN" style={{ backgroundColor: '#111' }}>ç®€ä½“</option>
+              <option value="zh-TW" style={{ backgroundColor: '#111' }}>ÁcÅé</option>
+              <option value="zh-CN" style={{ backgroundColor: '#111' }}>?Ê^</option>
             </select>
 
             {/* Mobile Logout Button */}
@@ -2553,8 +2553,8 @@ export default function App() {
                   }}
                 >
                   <option value="en" style={{ backgroundColor: '#111', color: '#fff' }}>English</option>
-                  <option value="zh-TW" style={{ backgroundColor: '#111', color: '#fff' }}>ç¹é«”ä¸­æ–‡ (Traditional)</option>
-                  <option value="zh-CN" style={{ backgroundColor: '#111', color: '#fff' }}>ç®€ä½“ä¸­æ–‡ (Simplified)</option>
+                  <option value="zh-TW" style={{ backgroundColor: '#111', color: '#fff' }}>ÁcÅé¤¤¤å (Traditional)</option>
+                  <option value="zh-CN" style={{ backgroundColor: '#111', color: '#fff' }}>?Ê^¤¤¤å (Simplified)</option>
                 </select>
               </div>
 
@@ -2594,7 +2594,7 @@ export default function App() {
                     gap: '4px'
                   }}>
                     <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, display: 'block', marginBottom: '0.25rem' }}>
-                      {lang === 'en' ? 'Matching Pages' : 'åŒ¹é…çš„é é¢'}
+                      {lang === 'en' ? 'Matching Pages' : '¤Ç°tªº­¶­±'}
                     </span>
                     {menuItems
                       .filter(item => item.label.toLowerCase().includes(searchQuery.toLowerCase()) || item.id.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -2631,7 +2631,7 @@ export default function App() {
                       ))}
                     {menuItems.filter(item => item.label.toLowerCase().includes(searchQuery.toLowerCase()) || item.id.toLowerCase().includes(searchQuery.toLowerCase())).length === 0 && (
                       <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center', padding: '0.25rem 0' }}>
-                        {lang === 'en' ? 'No results found' : 'ç„¡åŒ¹é…çµæœ'}
+                        {lang === 'en' ? 'No results found' : 'µL¤Ç°tµ²ªG'}
                       </span>
                     )}
                   </div>
@@ -2690,14 +2690,14 @@ export default function App() {
                     onClick={(e) => e.stopPropagation()}
                   >
                     <h4 style={{ fontWeight: 600, fontSize: '0.9rem', marginBottom: '0.75rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span>{lang === 'en' ? 'System Notifications' : 'ç³»çµ±é€šçŸ¥æ—¥èªŒ'}</span>
+                      <span>{lang === 'en' ? 'System Notifications' : '¨t²Î³qª¾¤é»x'}</span>
                       <span style={{ fontSize: '0.7rem', padding: '0.1rem 0.4rem', backgroundColor: 'var(--danger-glass)', color: 'var(--danger)', borderRadius: '99px' }}>
-                        {workflows.filter(w => w.status === 'Pending').length} {lang === 'en' ? 'Pending' : 'å¾…è™•ç†'}
+                        {workflows.filter(w => w.status === 'Pending').length} {lang === 'en' ? 'Pending' : '«İ³B²z'}
                       </span>
                     </h4>
                     {workflows.filter(w => w.status === 'Pending').length === 0 ? (
                       <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center', padding: '1rem 0' }}>
-                        {lang === 'en' ? 'No pending approval actions' : 'ç„¡å¾…è™•ç†çš„å¯©æ‰¹äº‹é …'}
+                        {lang === 'en' ? 'No pending approval actions' : 'µL«İ³B²zªº¼f§å¨Æ¶µ'}
                       </p>
                     ) : (
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -3145,7 +3145,7 @@ function DashboardView({
               cursor: 'pointer'
             }}
           >
-            â† Back to Dashboard
+            ¡ö Back to Dashboard
           </button>
           <span style={{ color: 'var(--text-muted)' }}>/</span>
           <span style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--text-color)' }}>
@@ -3246,7 +3246,7 @@ function DashboardView({
         
         {activeSubView === 'nextchat' && (
           <div style={{ height: '80vh', width: '100%', borderRadius: '12px', overflow: 'hidden' }}>
-            <iframe src={`https://${window.location.hostname}:3441/#/?settings=${encodeURIComponent(JSON.stringify({ key: userProfile.email || "kallec@wugroup.co" }))}`} style={{ width: '100%', height: '100%', border: 'none' }} title="NextChat" />
+            <iframe src={`https://${window.location.hostname}:3441/#/?settings=${encodeURIComponent(JSON.stringify({ accessCode: userProfile.email || "kallec@wugroup.co" }))}`} style={{ width: '100%', height: '100%', border: 'none' }} title="NextChat" />
           </div>
         )}
                   {activeSubView === 'meeting-ai' && (
@@ -3331,7 +3331,7 @@ function DashboardView({
           <img src="/logo.jpg" alt="Logo" style={{ width: '60px', height: '60px', borderRadius: '50%', border: '2px solid rgba(255,255,255,0.3)' }} />
           <div>
             <h1 style={{ fontSize: '2.25rem', fontWeight: 700, marginBottom: '0.25rem', color: '#ffffff' }}>Welcome to Cotton Republic Portal</h1>
-            <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '1.05rem' }}>Dah Je Co LTD (å¤§å‚‘æœ‰é™å…¬å¸) â€¢ Smart Enterprise AI Platform</p>
+            <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '1.05rem' }}>Dah Je Co LTD (¤j³Ç¦³­­¤½¥q) ¡E Smart Enterprise AI Platform</p>
           </div>
         </div>
       </div>
@@ -3939,7 +3939,7 @@ function HRServicesView({ employees, setEmployees, isBackendOnline }: any) {
                 <div>Hired: <strong style={{ color: 'var(--text-light)' }}>{emp.dateOfHire}</strong></div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.25rem' }}>
                   <span>Absences: <strong style={{ color: emp.absences > 5 ? '#ef4848' : 'var(--text-light)' }}>{emp.absences}</strong></span>
-                  <span>Satisfaction: <strong style={{ color: 'var(--warning)' }}>{'â˜…'.repeat(emp.empSatisfaction || 5)}</strong></span>
+                  <span>Satisfaction: <strong style={{ color: 'var(--warning)' }}>{'¡¹'.repeat(emp.empSatisfaction || 5)}</strong></span>
                 </div>
               </div>
             </div>
@@ -4345,7 +4345,7 @@ function LeaveManagementView({ leaves, setLeaves, isBackendOnline, userProfile, 
                     const limit = typeof lt === 'string' ? 'Unlimited' : lt.limit;
                     return (
                       <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', padding: '0.15rem 0.4rem', borderRadius: '4px', backgroundColor: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-color)', fontSize: '0.72rem', color: '#fff' }}>
-                        <span>{name} <span style={{ color: 'var(--text-muted)', fontSize: '0.65rem' }}>({limit === 'Unlimited' ? 'âˆ' : `${limit}d`})</span></span>
+                        <span>{name} <span style={{ color: 'var(--text-muted)', fontSize: '0.65rem' }}>({limit === 'Unlimited' ? '¡Û' : `${limit}d`})</span></span>
                         <button
                           type="button"
                           onClick={() => {
@@ -4364,7 +4364,7 @@ function LeaveManagementView({ leaves, setLeaves, isBackendOnline, userProfile, 
                           style={{ background: 'none', border: 'none', color: 'var(--primary)', cursor: 'pointer', padding: '0 0.15rem', display: 'flex', alignItems: 'center' }}
                           title="Adjust Name and Limit"
                         >
-                          âœ
+                          ?
                         </button>
                         <button
                           type="button"
@@ -4768,9 +4768,9 @@ function DocumentCenterView({ documents, setDocuments, isBackendOnline, userProf
 // --- 6. AI COPILOT ---
 function AICopilotView({ isAiOnline, inventory, purchaseOrders, salesOrders, employees = [], lang }: any) {
   const greeting = lang === 'zh-TW' 
-    ? 'æ‚¨å¥½ï¼æˆ‘æ˜¯æ‚¨çš„æ™ºèƒ½é–€æˆ¶ AI å”åŒåŠ©æ‰‹ã€‚æ‚¨å¯ä»¥è©¢å•æˆ‘é—œæ–¼åº«å­˜æŒ‡æ¨™ã€æ¡è³¼å–®ã€éŠ·å”®å–®æˆ–å“¡å·¥èˆ‡äººäº‹éƒ¨çš„æ•¸æ“šï¼Œæˆ‘ä¹Ÿèƒ½ç‚ºæ‚¨è§£ç­”å„é¡é‹ç‡Ÿèˆ‡è«‹å‡æ”¿ç­–ã€‚ä»Šå¤©æœ‰ä»€éº¼æˆ‘å¯ä»¥å¹«æ‚¨çš„ï¼Ÿ' 
+    ? '±z¦n¡I§Ú¬O±zªº´¼¯àªù¤á AI ¨ó¦P§U¤â¡C±z¥i¥H¸ß°İ§ÚÃö©ó®w¦s«ü¼Ğ¡B±ÄÁÊ³æ¡B¾P°â³æ©Î­û¤u»P¤H¨Æ³¡ªº¼Æ¾Ú¡A§Ú¤]¯à¬°±z¸Ñµª¦UÃş¹BÀç»P½Ğ°²¬Fµ¦¡C¤µ¤Ñ¦³¤°»ò§Ú¥i¥HÀ°±zªº¡H' 
     : lang === 'zh-CN' 
-    ? 'æ‚¨å¥½ï¼æˆ‘æ˜¯æ‚¨çš„æ™ºèƒ½é—¨æˆ· AI ååŒåŠ©æ‰‹ã€‚æ‚¨å¯ä»¥è¯¢é—®æˆ‘å…³äºåº“å­˜æŒ‡æ ‡ã€é‡‡è´­å•ã€é”€å”®å•æˆ–å‘˜å·¥ä¸äººäº‹éƒ¨çš„æ•°æ®ï¼Œä¹Ÿèƒ½ä¸ºæ‚¨è§£ç­”å„ç±»è¿è¥ä¸è¯·å‡æ”¿ç­–ã€‚ä»Šå¤©æœ‰ä»€ä¹ˆæˆ‘å¯ä»¥å¸®æ‚¨çš„ï¼Ÿ' 
+    ? '±z¦n¡I§Ú¬O±zªº´¼¯à?? AI ?¦P§U¤â¡C±z¥i¥H??§Ú?¤_?¦s«ü?¡Bªö??¡B?°â?©Î?¤uÉO¤H¨Æ³¡ªº?Õu¡A¤]¯à?±z¸Ñµª¦U???ÉO?°²¬Fµ¦¡C¤µ¤Ñ¦³¤°¤\§Ú¥i¥H?±zªº¡H' 
     : 'Hello! I am your Smart Enterprise Portal AI Copilot. I can fetch live ERP metrics, search employee lists, draft emails, review HR counts, or search knowledge articles. How can I help you today?';
 
   const [messages, setMessages] = useState<any[]>([
@@ -4837,7 +4837,7 @@ function AICopilotView({ isAiOnline, inventory, purchaseOrders, salesOrders, emp
     subtitle.style.color = '#a0aec0';
     
     const company = document.createElement('span');
-    company.innerText = 'Dah Je Co LTD (å¤§å‚‘æœ‰é™å…¬å¸) - Automated Report';
+    company.innerText = 'Dah Je Co LTD (¤j³Ç¦³­­¤½¥q) - Automated Report';
     const date = document.createElement('span');
     date.innerText = `Generated: ${new Date().toLocaleString()}`;
     
@@ -4932,8 +4932,8 @@ function AICopilotView({ isAiOnline, inventory, purchaseOrders, salesOrders, emp
 
     const langNames: { [key: string]: string } = {
       en: "English",
-      'zh-TW': "Traditional Chinese (ç¹é«”ä¸­æ–‡)",
-      'zh-CN': "Simplified Chinese (ç®€ä½“ä¸­æ–‡)"
+      'zh-TW': "Traditional Chinese (ÁcÅé¤¤¤å)",
+      'zh-CN': "Simplified Chinese (?Ê^¤¤¤å)"
     };
     const targetLangName = langNames[lang] || "English";
 
@@ -4969,9 +4969,9 @@ function AICopilotView({ isAiOnline, inventory, purchaseOrders, salesOrders, emp
         }
       } catch (err) {
         const fallbackText = lang === 'zh-TW'
-          ? `ç„¡æ³•é€£æ¥è‡³é›²ç«¯ AI æœå‹™ã€‚è«‹ç¢ºèª FastAPI æœå‹™æ˜¯å¦åœ¨é€£æ¥åŸ  8080 æ­£å¸¸é‹è¡Œã€‚\n\n*æœ¬åœ°æ¨¡æ“¬å›è¦†*ï¼šç›®å‰æ¡è³¼è¨‚å–®ï¼š30ï¼ŒéŠ·å”®è¨‚å–®ï¼š41ï¼Œåº«å­˜ç¸½è¨ˆï¼š30ä»¶ï¼Œäººäº‹éƒ¨å“¡å·¥ç¸½æ•¸ç‚ºï¼š${employees.length}åã€‚`
+          ? `µLªk³s±µ¦Ü¶³ºİ AI ªA°È¡C½Ğ½T»{ FastAPI ªA°È¬O§_¦b³s±µ°ğ 8080 ¥¿±`¹B¦æ¡C\n\n*¥»¦a¼ÒÀÀ¦^ÂĞ*¡G¥Ø«e±ÄÁÊ­q³æ¡G30¡A¾P°â­q³æ¡G41¡A®w¦sÁ`­p¡G30¥ó¡A¤H¨Æ³¡­û¤uÁ`¼Æ¬°¡G${employees.length}¦W¡C`
           : lang === 'zh-CN'
-          ? `æ— æ³•è¿æ¥è‡³äº‘ç«¯ AI æœåŠ¡ã€‚è¯·ç¡®è®¤ FastAPI æœåŠ¡æ˜¯å¦åœ¨ç«¯å£ 8080 æ­£å¸¸è¿è¡Œã€‚\n\n*æœ¬åœ°æ¨¡æ‹Ÿå›å¤*ï¼šç›®å‰é‡‡è´­è®¢å•ï¼š30ï¼Œé”€å”®è®¢å•ï¼š41ï¼Œåº“å­˜æ€»è®¡ï¼š30ä»¶ï¼Œäººäº‹éƒ¨å‘˜å·¥æ€»æ•°ä¸ºï¼š${employees.length}åã€‚`
+          ? `?ªk?±µ¦Ü¤ªºİ AI ªA?¡C?ÚÌ? FastAPI ªA?¬O§_¦bºİ¤f 8080 ¥¿±`?¦æ¡C\n\n*¥»¦a¼Ò?¦^Î`*¡G¥Ø«eªö???¡G30¡A?°â??¡G41¡A?¦s??¡G30¥ó¡A¤H¨Æ³¡?¤u???¡G${employees.length}¦W¡C`
           : `Error communicating with the Python FastAPI AI service. Please make sure the server is running on port 8080. \n\n*Local Mock Response*: Total POs: 30, Total SOs: 41, Inventory: 30 items, HR Employee headcount is: ${employees.length} employees.`;
         setMessages(prev => [...prev, { role: 'assistant', content: fallbackText }]);
       }
@@ -4980,30 +4980,30 @@ function AICopilotView({ isAiOnline, inventory, purchaseOrders, salesOrders, emp
       setTimeout(() => {
         let answer = "";
         if (lang === 'zh-TW') {
-          answer += "ç³»çµ±ç›®å‰é‹è¡Œæ–¼é›¢ç·šæ¨¡æ“¬æ¨¡å¼ã€‚è«‹åœ¨ Render æˆ–æœ¬åœ°ç«¯å•Ÿå‹• Python FastAPI æœå‹™ï¼Œä¸¦é…ç½®æ‚¨çš„ Hugging Face é‡‘é‘°ä¾†å•Ÿç”¨å®Œæ•´çš„ Qwen æ™ºèƒ½æ¨¡å‹ã€‚\n\n";
-          if (userMsg.toLowerCase().includes('inventory') || userMsg.toLowerCase().includes('stock') || userMsg.includes('åº«å­˜') || userMsg.includes('å­˜è²¨')) {
-            answer += `å¯¦æ™‚åº«å­˜ç‹€æ…‹ï¼šæˆ‘å€‘åœ¨ ERP æ•¸æ“šåº«ä¸­æ“æœ‰ ${inventory.length} ä»¶ç´¡ç¹”å“å’Œé¢æ–™ã€‚å…¶ä¸­ï¼Œ1 ä»¶æ¨™è¨˜ç‚ºã€Œä½åº«å­˜ã€ç‹€æ…‹ï¼Œæ€¥éœ€è£œè²¨ã€‚`;
-          } else if (userMsg.toLowerCase().includes('po') || userMsg.toLowerCase().includes('purchase') || userMsg.includes('æ¡è³¼')) {
-            answer += `æ¡è³¼å–®çµ±è¨ˆï¼šç•¶å‰ç³»çµ±ä¸­å·²åŒæ­¥ä¸¦è¨˜éŒ„äº† ${purchaseOrders.length} ç­†æ´»èºæ¡è³¼è¨‚å–®ã€‚`;
-          } else if (userMsg.toLowerCase().includes('so') || userMsg.toLowerCase().includes('sales') || userMsg.includes('éŠ·å”®')) {
-            answer += `éŠ·å”®å–®çµ±è¨ˆï¼šç•¶å‰ç³»çµ±ä¸­å·²è™•ç†ä¸¦æ­¸æª”äº† ${salesOrders.length} ç­†æ´»èºéŠ·å”®è¨‚å–®ã€‚`;
-          } else if (userMsg.toLowerCase().includes('employee') || userMsg.toLowerCase().includes('hr') || userMsg.includes('å“¡å·¥') || userMsg.includes('é›‡å“¡') || userMsg.includes('äººæ•¸') || userMsg.includes('äººäº‹')) {
-            answer += `äººäº‹éƒ¨çµ±è¨ˆï¼šæˆ‘å€‘çš„äººåŠ›è³‡æºç³»çµ±ä¸­ç›®å‰è¨»å†Šäº† ${employees.length} åå“¡å·¥ã€‚æ‚¨å¯ä»¥åœ¨ã€Œäººäº‹æœå‹™ã€é é¢æŸ¥çœ‹å®Œæ•´çš„å“¡å·¥åå†Šå’Œä¸»ç®¡åå–®ã€‚`;
+          answer += "¨t²Î¥Ø«e¹B¦æ©óÂ÷½u¼ÒÀÀ¼Ò¦¡¡C½Ğ¦b Render ©Î¥»¦aºİ±Ò°Ê Python FastAPI ªA°È¡A¨Ã°t¸m±zªº Hugging Face ª÷Æ_¨Ó±Ò¥Î§¹¾ãªº Qwen ´¼¯à¼Ò«¬¡C\n\n";
+          if (userMsg.toLowerCase().includes('inventory') || userMsg.toLowerCase().includes('stock') || userMsg.includes('®w¦s') || userMsg.includes('¦s³f')) {
+            answer += `¹ê®É®w¦sª¬ºA¡G§Ú­Ì¦b ERP ¼Æ¾Ú®w¤¤¾Ö¦³ ${inventory.length} ¥ó¯¼Â´«~©M­±®Æ¡C¨ä¤¤¡A1 ¥ó¼Ğ°O¬°¡u§C®w¦s¡vª¬ºA¡A«æ»İ¸É³f¡C`;
+          } else if (userMsg.toLowerCase().includes('po') || userMsg.toLowerCase().includes('purchase') || userMsg.includes('±ÄÁÊ')) {
+            answer += `±ÄÁÊ³æ²Î­p¡G·í«e¨t²Î¤¤¤w¦P¨B¨Ã°O¿ı¤F ${purchaseOrders.length} µ§¬¡ÅD±ÄÁÊ­q³æ¡C`;
+          } else if (userMsg.toLowerCase().includes('so') || userMsg.toLowerCase().includes('sales') || userMsg.includes('¾P°â')) {
+            answer += `¾P°â³æ²Î­p¡G·í«e¨t²Î¤¤¤w³B²z¨ÃÂkÀÉ¤F ${salesOrders.length} µ§¬¡ÅD¾P°â­q³æ¡C`;
+          } else if (userMsg.toLowerCase().includes('employee') || userMsg.toLowerCase().includes('hr') || userMsg.includes('­û¤u') || userMsg.includes('¶±­û') || userMsg.includes('¤H¼Æ') || userMsg.includes('¤H¨Æ')) {
+            answer += `¤H¨Æ³¡²Î­p¡G§Ú­Ìªº¤H¤O¸ê·½¨t²Î¤¤¥Ø«eµù¥U¤F ${employees.length} ¦W­û¤u¡C±z¥i¥H¦b¡u¤H¨ÆªA°È¡v­¶­±¬d¬İ§¹¾ãªº­û¤u¦W¥U©M¥DºŞ¦W³æ¡C`;
           } else {
-            answer += `æ¨¡æ“¬åŠ©æ‰‹å›è¦†ï¼šã€Œ${userMsg}ã€ã€‚è«‹å•é‚„æœ‰ä»€éº¼æˆ‘å¯ä»¥å”åŠ©æ‚¨æŸ¥è©¢çš„å—ï¼Ÿ`;
+            answer += `¼ÒÀÀ§U¤â¦^ÂĞ¡G¡u${userMsg}¡v¡C½Ğ°İÁÙ¦³¤°»ò§Ú¥i¥H¨ó§U±z¬d¸ßªº¶Ü¡H`;
           }
         } else if (lang === 'zh-CN') {
-          answer += "ç³»ç»Ÿç›®å‰è¿è¡Œäºç¦»çº¿æ¨¡æ‹Ÿæ¨¡å¼ã€‚è¯·åœ¨ Render æˆ–æœ¬åœ°ç«¯å¯åŠ¨ Python FastAPI æœåŠ¡ï¼Œå¹¶é…ç½®æ‚¨çš„ Hugging Face å¯†é’¥æ¥å¯ç”¨å®Œæ•´çš„ Qwen æ™ºèƒ½æ¨¡å‹ã€‚\n\n";
-          if (userMsg.toLowerCase().includes('inventory') || userMsg.toLowerCase().includes('stock') || userMsg.includes('åº“å­˜') || userMsg.includes('å­˜è´§')) {
-            answer += `å®æ—¶åº“å­˜çŠ¶æ€ï¼šæˆ‘ä»¬åœ¨ ERP æ•°æ®åº“ä¸­æ‹¥æœ‰ ${inventory.length} ä»¶çººç»‡å“å’Œé¢æ–™ã€‚å…¶ä¸­ï¼Œ1 ä»¶æ ‡è®°ä¸ºã€Œä½åº“å­˜ã€çŠ¶æ€ï¼Œæ€¥éœ€è¡¥è´§ã€‚`;
-          } else if (userMsg.toLowerCase().includes('po') || userMsg.toLowerCase().includes('purchase') || userMsg.includes('é‡‡è´­')) {
-            answer += `é‡‡è´­å•ç»Ÿè®¡ï¼šå½“å‰ç³»ç»Ÿä¸­å·²åŒæ­¥å¹¶è®°å½•äº† ${purchaseOrders.length} ç¬”æ´»è·ƒé‡‡è´­è®¢å•ã€‚`;
-          } else if (userMsg.toLowerCase().includes('so') || userMsg.toLowerCase().includes('sales') || userMsg.includes('é”€å”®')) {
-            answer += `é”€å”®å•ç»Ÿè®¡ï¼šå½“å‰ç³»ç»Ÿä¸­å·²å¤„ç†å¹¶å½’æ¡£äº† ${salesOrders.length} ç¬”æ´»è·ƒé”€å”®è®¢å•ã€‚`;
-          } else if (userMsg.toLowerCase().includes('employee') || userMsg.toLowerCase().includes('hr') || userMsg.includes('å‘˜å·¥') || userMsg.includes('é›‡å‘˜') || userMsg.includes('äººæ•°') || userMsg.includes('äººäº‹')) {
-            answer += `äººäº‹éƒ¨ç»Ÿè®¡ï¼šæˆ‘ä»¬çš„äººåŠ›èµ„æºç³»ç»Ÿä¸­ç›®å‰æ³¨å†Œäº† ${employees.length} åå‘˜å·¥ã€‚æ‚¨å¯ä»¥åœ¨ã€Œäººäº‹æœåŠ¡ã€é¡µé¢æŸ¥çœ‹å®Œæ•´çš„å‘˜å·¥åå†Œå’Œä¸»ç®¡åå•ã€‚`;
+          answer += "¨t?¥Ø«e?¦æ¤_ÖÃ?¼Ò?¼Ò¦¡¡C?¦b Render ©Î¥»¦aºİ?? Python FastAPI ªA?¡A¦}°t¸m±zªº Hugging Face ±K???¥Î§¹¾ãªº Qwen ´¼¯à¼Ò«¬¡C\n\n";
+          if (userMsg.toLowerCase().includes('inventory') || userMsg.toLowerCase().includes('stock') || userMsg.includes('?¦s') || userMsg.includes('¦s?')) {
+            answer += `???¦s??¡G§Ú?¦b ERP ?Õu?¤¤?¦³ ${inventory.length} ¥ó??«~©M­±®Æ¡C¨ä¤¤¡A1 ¥ó???¡u§C?¦s¡v??¡A«æ»İ??¡C`;
+          } else if (userMsg.toLowerCase().includes('po') || userMsg.toLowerCase().includes('purchase') || userMsg.includes('ªö?')) {
+            answer += `ªö????¡G?«e¨t?¤¤¤w¦P¨B¦}??¤F ${purchaseOrders.length} ?¬¡?ªö???¡C`;
+          } else if (userMsg.toLowerCase().includes('so') || userMsg.toLowerCase().includes('sales') || userMsg.includes('?°â')) {
+            answer += `?°â???¡G?«e¨t?¤¤¤w?²z¦}??¤F ${salesOrders.length} ?¬¡??°â??¡C`;
+          } else if (userMsg.toLowerCase().includes('employee') || userMsg.toLowerCase().includes('hr') || userMsg.includes('?¤u') || userMsg.includes('¶±?') || userMsg.includes('¤H?') || userMsg.includes('¤H¨Æ')) {
+            answer += `¤H¨Æ³¡??¡G§Ú?ªº¤H¤O?·½¨t?¤¤¥Ø«eª`?¤F ${employees.length} ¦W?¤u¡C±z¥i¥H¦b¡u¤H¨ÆªA?¡v?­±¬d¬İ§¹¾ãªº?¤u¦W?©M¥DºŞ¦W?¡C`;
           } else {
-            answer += `æ¨¡æ‹ŸåŠ©æ‰‹å›å¤ï¼šâ€œ${userMsg}â€ã€‚è¯·é—®è¿˜æœ‰ä»€ä¹ˆæˆ‘å¯ä»¥ååŠ©æ‚¨æŸ¥è¯¢çš„å—ï¼Ÿ`;
+            answer += `¼Ò?§U¤â¦^Î`¡G¡§${userMsg}¡¨¡C???¦³¤°¤\§Ú¥i¥H?§U±z¬d?ªº?¡H`;
           }
         } else {
           answer += "I am running in offline mode. Please run the Python FastAPI AI service (port 8080) with your HuggingFace API key to activate full Qwen models. \n\n";
@@ -5664,7 +5664,7 @@ function CompanyLocationsWidget() {
   const echartsInstanceRef = useRef<any>(null);
   const [activeDetails, setActiveDetails] = useState<any>({
     isRoute: false,
-    name: 'Taipei Headquarters (å¤§å‚‘ç¸½éƒ¨)',
+    name: 'Taipei Headquarters (¤j³ÇÁ`³¡)',
     type: 'Corporate Office',
     address: 'No. 8, Sec. 5, Xinyi Rd, Taipei City',
     employees: 42,
@@ -5707,7 +5707,7 @@ function CompanyLocationsWidget() {
         trigger: 'item',
         formatter: (params: any) => {
           if (params.seriesType === 'lines') {
-            return `<b>Supply Route</b><br/>${params.data.fromName} â” ${params.data.toName}<br/>Cargo: ${params.data.cargo}<br/>Rate: ${params.data.value} shipments/day`;
+            return `<b>Supply Route</b><br/>${params.data.fromName} ? ${params.data.toName}<br/>Cargo: ${params.data.cargo}<br/>Rate: ${params.data.value} shipments/day`;
           }
           return `<b>${params.name}</b><br/>Staff: ${params.value[2]} active`;
         }
@@ -5784,7 +5784,7 @@ function CompanyLocationsWidget() {
         const routeData = params.data;
         setActiveDetails({
           isRoute: true,
-          name: `${routeData.fromName} â” ${routeData.toName}`,
+          name: `${routeData.fromName} ? ${routeData.toName}`,
           cargo: routeData.cargo,
           frequency: routeData.value,
           metrics: `Automated transit flow monitoring raw output. Cargo: ${routeData.cargo}. Average frequency is ${routeData.value} runs/day.`
@@ -5832,7 +5832,7 @@ function CompanyLocationsWidget() {
       {/* Info Panel */}
       <div style={{ flex: '1 1 280px', display: 'flex', flexDirection: 'column', gap: '0.75rem', justifyContent: 'center' }}>
         <h4 style={{ fontSize: '1rem', fontWeight: 600, borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.5rem', color: 'var(--text-color)', margin: 0 }}>
-          ğŸ—ºï¸ Logistics Transit Index
+          ??? Logistics Transit Index
         </h4>
         
         {activeDetails ? (
@@ -5991,7 +5991,7 @@ function ReportsAnalyticsView({ purchaseOrders, salesOrders, inventory }: any) {
           </p>
         </div>
         <span style={{ fontSize: '0.8rem', color: 'var(--success)', backgroundColor: 'rgba(16, 185, 129, 0.08)', padding: '0.4rem 0.8rem', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
-          ğŸ”„ Drag-to-Swap & Corner Resizing Enabled
+          ?? Drag-to-Swap & Corner Resizing Enabled
         </span>
       </div>
 
@@ -6224,7 +6224,7 @@ function UserProfileView({ userProfile, setUserProfile }: any) {
             }}
             title="Upload Photo"
           >
-            ğŸ“·
+            ??
           </label>
           <input
             id="profile-image-upload"
@@ -7086,7 +7086,7 @@ function RealDataView({
                     <td style={tableCellStyle}>{lv.type}</td>
                     <td style={tableCellStyle}>{lv.startDate} to {lv.endDate}</td>
                     <td style={tableCellStyle}>{lv.reason}</td>
-                    <td style={{ ...tableCellStyle, fontSize: '0.8rem', color: 'var(--text-muted)' }}>{lv.comments || 'â€”'}</td>
+                    <td style={{ ...tableCellStyle, fontSize: '0.8rem', color: 'var(--text-muted)' }}>{lv.comments || '¡X'}</td>
                     <td style={tableCellStyle}>{getStatusBadge(lv.status)}</td>
                   </tr>
                 ))}
