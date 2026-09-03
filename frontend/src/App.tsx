@@ -346,7 +346,7 @@ const BACKEND_URL = (import.meta as any).env.VITE_BACKEND_URL ||
 const AI_URL = (import.meta as any).env.VITE_AI_URL || 
   (typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')
     ? 'https://cotton-ai-service.onrender.com/api'
-    : `https://${typeof window !== 'undefined' ? window.location.hostname : 'localhost'}:8440/api`);
+    : `https://${typeof window !== 'undefined' ? window.location.hostname : 'localhost'}:3440/api`);
 
 // Static fallbacks for offline mode
 const MOCK_ANNOUNCEMENTS = [
