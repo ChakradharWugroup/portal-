@@ -27,7 +27,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchMeetings = async () => {
       try {
-        const res = await fetch(https://:3440/api/meetings');
+        const res = await fetch('/api/meetings');
         if (res.ok) {
           const data = await res.json();
           setMeetings(data);
@@ -48,7 +48,7 @@ export default function Dashboard() {
     if (!botUrl) return;
     setDispatchStatus('Dispatching...');
     try {
-      const res = await fetch(https://:3440/api/dispatch', {
+      const res = await fetch('/api/dispatch', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: botUrl }),
@@ -86,7 +86,7 @@ export default function Dashboard() {
         formData.append('chunk_index', String(i));
         formData.append('total_chunks', String(totalChunks));
         formData.append('filename', file.name);
-        const res = await fetch(https://:3440/api/upload-chunk', { method: 'POST', body: formData });
+        const res = await fetch('/api/upload-chunk', { method: 'POST', body: formData });
         if (!res.ok) {
           const errText = await res.text();
           setUploadStatus('Upload failed on chunk ' + (i + 1) + ': ' + errText.substring(0, 80));
@@ -178,7 +178,7 @@ export default function Dashboard() {
                 }
                 setDispatchStatus('Dispatching YouTube Bot...');
                 try {
-                  const res = await fetch(https://:3440/api/youtube', {
+                  const res = await fetch('/api/youtube', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ url: youtubeUrl }),
