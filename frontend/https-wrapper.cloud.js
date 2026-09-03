@@ -12,7 +12,6 @@ proxy.on('error', (err, req, res) => {
 const proxyServices = [
     { name: 'Django Backend', httpsPort: 8445, targetHost: 'portal_django_backend_1', targetPort: 8005 },
     { name: 'FastAPI AI',     httpsPort: 8440, targetHost: 'portal_ai_copilot_1',     targetPort: 8080 },
-    { name: 'Meeting AI',     httpsPort: 3440, targetHost: '10.0.0.105',              targetPort: 3000 },
     { name: 'NextChat',       httpsPort: 3441, targetHost: 'nextchat_nextchat_1',     targetPort: 3000 }
 ];
 
