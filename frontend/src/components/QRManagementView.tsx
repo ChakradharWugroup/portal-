@@ -14,7 +14,7 @@ export default function QRManagementView({ lang }: { lang: string }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`https://${window.location.hostname}:3440/api/collections`);
+      const res = await fetch(`https://${window.location.hostname}:8440/api/collections`);
       const data = await res.json();
       if (Array.isArray(data)) {
         setCollections(data);
@@ -38,7 +38,7 @@ export default function QRManagementView({ lang }: { lang: string }) {
         setLoading(false);
         return;
       }
-      const url = `https://${window.location.hostname}:3440/api/collections/${collectionId}`;
+      const url = `https://${window.location.hostname}:8440/api/collections/${collectionId}`;
       const res = await fetch(url);
       const data = await res.json();
       if (data.qr_codes) {
