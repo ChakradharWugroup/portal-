@@ -13,3 +13,17 @@ pyzbar
 rapidocr-onnxruntime
 pymysql
 cryptography
+pydantic-settings
+psycopg2-binary
+pgvector
+python-docx
+reportlab
+groq
+websockets
+apscheduler
+tzlocal
+pytz
+aiohttp
+torch
+torchaudio
+pyannote.audio

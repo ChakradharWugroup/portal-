@@ -135,3 +135,8 @@ import json
 # Include QR API
 from app.qr_api.routes import qr_router
 app.include_router(qr_router)
+
+
+# Include Meeting AI
+from app.meeting_ai.api.fastapi import meeting_router
+app.include_router(meeting_router)
