@@ -130,3 +130,8 @@ def analyze_erp_endpoint(request: ERPAnalysisRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 import json
+
+
+# Include QR API
+from app.qr_api.routes import qr_router
+app.include_router(qr_router)

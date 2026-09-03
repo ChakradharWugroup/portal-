@@ -4,3 +4,12 @@ pydantic>=2.0
 requests>=2.31.0
 huggingface_hub>=0.16.0
 python-multipart>=0.0.6
+
+sqlalchemy
+jinja2
+qrcode
+opencv-python-headless
+pyzbar
+rapidocr-onnxruntime
+pymysql
+cryptography
