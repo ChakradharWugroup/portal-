@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Database, Folder, QrCode, ArrowLeft, Loader2, AlertCircle } from 'lucide-react';
 
 export default function QRManagementView({ lang }: { lang: string }) {
@@ -14,12 +14,12 @@ export default function QRManagementView({ lang }: { lang: string }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`https://${window.location.hostname}:8445/api/qr/collections`);
+      const res = await fetch(`https://${window.location.hostname}:3440/api/collections`);
       const data = await res.json();
-      if (data.status === 'success') {
-        setCollections(data.data);
+      if (Array.isArray(data)) {
+        setCollections(data);
       } else {
-        setError(data.message || 'Failed to fetch collections');
+        setError(data.error || 'Failed to fetch collections');
       }
     } catch (err: any) {
       setError(err.toString());
@@ -33,15 +33,18 @@ export default function QRManagementView({ lang }: { lang: string }) {
     setLoading(true);
     setError(null);
     try {
-      const url = collectionId 
-        ? `https://${window.location.hostname}:8445/api/qr/garment-codes?collection_id=${collectionId}`
-        : `https://${window.location.hostname}:8445/api/qr/garment-codes`;
+      if (!collectionId) {
+        setQrCodes([]);
+        setLoading(false);
+        return;
+      }
+      const url = `https://${window.location.hostname}:3440/api/collections/${collectionId}`;
       const res = await fetch(url);
       const data = await res.json();
-      if (data.status === 'success') {
-        setQrCodes(data.data);
+      if (data.qr_codes) {
+        setQrCodes(data.qr_codes);
       } else {
-        setError(data.message || 'Failed to fetch QR codes');
+        setError(data.error || 'Failed to fetch QR codes');
       }
     } catch (err: any) {
       setError(err.toString());
@@ -97,7 +100,7 @@ export default function QRManagementView({ lang }: { lang: string }) {
           <AlertCircle size={20} />
           <div>
             <strong>TiDB Connection Error:</strong> {error}
-            <div style={{ fontSize: '0.85rem', marginTop: '0.25rem' }}>Make sure you have added your actual password in <code>django_backend/core_api/qr_views.py</code></div>
+            <div style={{ fontSize: '0.85rem', marginTop: '0.25rem' }}>Make sure you have added your actual password in <code>ai-service/app/qr_api/database.py</code></div>
           </div>
         </div>
       )}
