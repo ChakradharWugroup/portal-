@@ -13,13 +13,13 @@ export default defineConfig({
     https: true,
     proxy: {
       '/ai-api': {
-        target: process.env.VITE_AI_URL || 'http://ai_copilot:8080',
+        target: process.env.VITE_AI_URL || 'http://127.0.0.1:8080',
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/ai-api/, '/api')
       },
       '/django-api': {
-        target: process.env.VITE_DJANGO_URL || 'http://django_backend:8005',
+        target: process.env.VITE_DJANGO_URL || 'http://127.0.0.1:8000',
         changeOrigin: false,
         secure: false,
         rewrite: (path) => path.replace(/^\/django-api/, '/api')
