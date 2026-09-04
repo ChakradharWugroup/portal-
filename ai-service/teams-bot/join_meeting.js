@@ -28,6 +28,7 @@ if (!meetingUrl || !meetingId) {
         headless: true,
         args: [
             '--use-fake-ui-for-media-stream',
+            '--use-fake-device-for-media-stream',
             '--disable-web-security',
             '--window-size=1920,1080',
             '--autoplay-policy=no-user-gesture-required'
