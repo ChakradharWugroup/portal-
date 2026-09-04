@@ -97,7 +97,7 @@ export default function MeetingAIView({ lang }: { lang?: string }) {
     setUploadStatus(`Uploading ${file.name}...`);
     
     try {
-      const chunkSize = 1024 * 1024 * 2; // 2MB
+      const chunkSize = 1024 * 1024 * 50; // 50MB chunks to avoid rapid-fire network drops
       const totalChunks = Math.ceil(file.size / chunkSize);
       let sessionId = Date.now().toString();
 
