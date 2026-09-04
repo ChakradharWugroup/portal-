@@ -129,8 +129,9 @@ export default function MeetingAIView({ lang }: { lang?: string }) {
       setUploadStatus('Upload complete. Processing audio...');
       fetchMeetings();
       setTimeout(() => setUploadStatus(''), 5000);
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
+      alert('Upload failed: ' + (error.message || error));
       setUploadStatus('Upload failed');
     } finally {
       setIsUploading(false);
