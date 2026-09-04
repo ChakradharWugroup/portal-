@@ -158,7 +158,7 @@ async def dispatch_bot(request: Request):
     import subprocess
     try:
         subprocess.Popen(
-            ["node", "join_meeting.js", url, meeting_id, f"ws://127.0.0.1:{request.url.port or 8081}/meeting/{meeting_id}/ws"],
+            ["node", "join_meeting.js", url, meeting_id, f"ws://127.0.0.1:8080/api/meeting/{meeting_id}/ws"],
             cwd=bot_dir,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL
@@ -193,7 +193,7 @@ async def schedule_meeting(req: ScheduleRequest):
             bot_dir = "/app/teams-bot" if os.path.exists("/app/teams-bot") else os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), "teams-bot")
             import subprocess
             subprocess.Popen(
-                ["node", "join_meeting.js", url_val, m_id],
+                ["node", "join_meeting.js", url_val, m_id, f"ws://127.0.0.1:8080/api/meeting/{m_id}/ws"],
                 cwd=bot_dir,
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL
@@ -588,7 +588,7 @@ async def process_youtube_url(url: str, meeting_id: str):
             except Exception as e:
                 print(f"Failed to parse yt-dlp JSON: {e}")
 
-        # ?ï¿½?ï¿½ Step 2: Detect the video's primary spoken language ?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½
+        # ?ï¿?ï¿?Step 2: Detect the video's primary spoken language ?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?
         spoken_lang = None
         if result_info.returncode == 0 and result_info.stdout:
             try:
@@ -601,7 +601,7 @@ async def process_youtube_url(url: str, meeting_id: str):
             except Exception as e:
                 print(f"Failed to detect language: {e}")
 
-        # ?ï¿½?ï¿½ Step 3: Try to use subtitles ONLY in the spoken language ?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½?ï¿½
+        # ?ï¿?ï¿?Step 3: Try to use subtitles ONLY in the spoken language ?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?ï¿?
         subtitle_lang = None
         use_auto = False
 
