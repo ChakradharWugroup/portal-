@@ -562,7 +562,7 @@ async def process_youtube_url(url: str, meeting_id: str):
 
         def run_dump_json():
             return subprocess.run(
-                ["yt-dlp", "--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android", "--dump-json", url],
+                ["yt-dlp", "--cookies", "/app/cookies.txt", "--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android", "--dump-json", url],
                 capture_output=True
             )
 
@@ -650,7 +650,7 @@ async def process_youtube_url(url: str, meeting_id: str):
             def run_sub_download():
                 return subprocess.run(
                     [
-                        "yt-dlp", "--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android",
+                        "yt-dlp", "--cookies", "/app/cookies.txt", "--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android",
                         sub_flag,
                         "--sub-lang", subtitle_lang,
                         "--sub-format", "vtt",
@@ -805,7 +805,7 @@ async def process_youtube_url(url: str, meeting_id: str):
 
         def run_download():
             return subprocess.run(
-                ["yt-dlp", "--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android", "-o", output_template, url],
+                ["yt-dlp", "--cookies", "/app/cookies.txt", "--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android", "-o", output_template, url],
                 capture_output=True
             )
 
