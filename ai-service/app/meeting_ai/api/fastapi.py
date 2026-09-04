@@ -814,7 +814,7 @@ async def process_youtube_url(url: str, meeting_id: str):
 
         if result_dl.returncode != 0:
             err = result_dl.stderr.decode(errors="replace")
-            raise Exception(f"yt-dlp download failed: {err[:300]}")
+            raise Exception(f"yt-dlp download failed: {err}")
 
         downloaded_files = glob.glob(os.path.join(temp_dir, f"{meeting_id}_*"))
         if not downloaded_files:
