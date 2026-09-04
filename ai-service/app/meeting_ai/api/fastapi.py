@@ -556,13 +556,13 @@ async def process_youtube_url(url: str, meeting_id: str):
     start_total_time = time.time()
 
     try:
-        # ?�?� Step 1: Fetch video metadata (title + available subtitles) ?�?�?�?�?�?�?�?�?�?�
+        # ?? Step 1: Fetch video metadata (title + available subtitles) ??????????
         update_status("Inspecting video for subtitles and title...")
         t_meta_start = time.time()
 
         def run_dump_json():
             return subprocess.run(
-                ["yt-dlp", "--js-runtimes", "node", "--remote-components", "ejs:github", "--dump-json", url],
+                ["yt-dlp", "--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android", "--dump-json", url],
                 capture_output=True
             )
 
@@ -650,7 +650,7 @@ async def process_youtube_url(url: str, meeting_id: str):
             def run_sub_download():
                 return subprocess.run(
                     [
-                        "yt-dlp", "--js-runtimes", "node",
+                        "yt-dlp", "--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android",
                         sub_flag,
                         "--sub-lang", subtitle_lang,
                         "--sub-format", "vtt",
@@ -798,14 +798,14 @@ async def process_youtube_url(url: str, meeting_id: str):
                 print(f"[{meeting_id}] Subtitle extraction complete. {len(transcript_segments)} cues. Total time: {t_total_sec}s")
                 return
 
-        # ?�?� Step 4: No subtitles ??fall back to audio download + Gemini ?�?�?�?�?�?�?�?�?�
+        # ?? Step 4: No subtitles ??fall back to audio download + Gemini ?????????
         update_status("No subtitles found. Downloading audio for AI transcription...")
         output_template = os.path.join(temp_dir, f"{meeting_id}_audio.%(ext)s")
         t_dl_start = time.time()
 
         def run_download():
             return subprocess.run(
-                ["yt-dlp", "--js-runtimes", "node", "--remote-components", "ejs:github", "-o", output_template, url],
+                ["yt-dlp", "--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android", "-o", output_template, url],
                 capture_output=True
             )
 
