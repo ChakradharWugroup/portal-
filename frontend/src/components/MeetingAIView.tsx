@@ -107,8 +107,8 @@ export default function MeetingAIView({ lang }: { lang?: string }) {
         const chunk = file.slice(start, end);
         
         const formData = new FormData();
-        formData.append('file', chunk);
-        formData.append('session_id', sessionId);
+        formData.append('chunk', chunk);
+        formData.append('file_id', sessionId);
         formData.append('chunk_index', String(i));
         formData.append('total_chunks', String(totalChunks));
         formData.append('filename', file.name);
