@@ -10,8 +10,8 @@ proxy.on('error', (err, req, res) => {
 });
 
 const proxyServices = [
-    { name: 'Django Backend', httpsPort: 8445, targetHost: 'portal_django_backend_1', targetPort: 8005 },
-    { name: 'FastAPI AI',     httpsPort: 8440, targetHost: 'portal_ai_copilot_1',     targetPort: 8080 },
+    { name: 'Django Backend', httpsPort: 8445, targetHost: 'django_backend', targetPort: 8005 },
+    { name: 'FastAPI AI',     httpsPort: 8440, targetHost: 'ai_copilot',     targetPort: 8080 },
     { name: 'NextChat',       httpsPort: 3441, targetHost: 'nextchat_nextchat_1',     targetPort: 3000 }
 ];
 
@@ -26,3 +26,4 @@ proxyServices.forEach(svc => {
         console.log('[HTTPS Wrapper] ' + svc.name + ' -> https://0.0.0.0:' + svc.httpsPort);
     });
 });
+
