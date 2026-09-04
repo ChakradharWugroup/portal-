@@ -25,7 +25,7 @@ export default function MeetingAIView({ lang }: { lang?: string }) {
 
   const fetchMeetings = async () => {
     try {
-      const res = await fetch(`https://${window.location.hostname}:8440/api/meetings`);
+      const res = await fetch(`/ai-api/meetings`);
       if (res.ok) {
         const data = await res.json();
         setMeetings(data);
@@ -48,7 +48,7 @@ export default function MeetingAIView({ lang }: { lang?: string }) {
     if (!botUrl) return;
     setDispatchStatus('Dispatching...');
     try {
-      const res = await fetch(`https://${window.location.hostname}:8440/api/dispatch`, {
+      const res = await fetch(`/ai-api/dispatch`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: botUrl }),
@@ -71,7 +71,7 @@ export default function MeetingAIView({ lang }: { lang?: string }) {
     e.preventDefault();
     setDispatchStatus('Dispatching YouTube Bot...');
     try {
-      const res = await fetch(`https://${window.location.hostname}:8440/api/youtube`, { 
+      const res = await fetch(`/ai-api/youtube`, { 
         method: 'POST', 
         headers: { 'Content-Type': 'application/json' }, 
         body: JSON.stringify({ url: youtubeUrl }) 
@@ -113,7 +113,7 @@ export default function MeetingAIView({ lang }: { lang?: string }) {
         formData.append('total_chunks', String(totalChunks));
         formData.append('filename', file.name);
         
-        const res = await fetch(`https://${window.location.hostname}:8440/api/upload-chunk`, { 
+        const res = await fetch(`/ai-api/upload-chunk`, { 
           method: 'POST', 
           body: formData 
         });
@@ -287,7 +287,7 @@ export default function MeetingAIView({ lang }: { lang?: string }) {
                      <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}><Clock size={14} /> {m.duration}</span>
                    </span>
                    <a 
-                     href={`https://${window.location.hostname}:8440/api/meetings/${m.id}/pdf`} 
+                     href={`/ai-api/meetings/${m.id}/pdf`} 
                      target="_blank" 
                      rel="noopener noreferrer" 
                      className="category-badge"

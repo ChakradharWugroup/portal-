@@ -10,6 +10,20 @@ export default defineConfig({
   server: {
     port: 3004,
     host: '0.0.0.0',
-    https: true
+    https: true,
+    proxy: {
+      '/ai-api': {
+        target: process.env.VITE_AI_URL || 'http://ai_copilot:8080',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/ai-api/, '/api')
+      },
+      '/django-api': {
+        target: process.env.VITE_DJANGO_URL || 'http://django_backend:8000',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/django-api/, '/api')
+      }
+    }
   },
 });

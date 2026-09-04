@@ -342,12 +342,12 @@ const LOCALIZED_ANNOUNCEMENTS: { [key: string]: any[] } = {
 const BACKEND_URL = (import.meta as any).env.VITE_BACKEND_URL || 
   (typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')
     ? 'https://cotton-backend-h674.onrender.com/api'
-    : `https://${typeof window !== 'undefined' ? window.location.hostname : 'localhost'}:8445/api`);
+    : `/django-api`);
 
 const AI_URL = (import.meta as any).env.VITE_AI_URL || 
   (typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')
     ? 'https://cotton-ai-service.onrender.com/api'
-    : `https://${typeof window !== 'undefined' ? window.location.hostname : 'localhost'}:8440/api`);
+    : `/ai-api`);
 
 // Static fallbacks for offline mode
 const MOCK_ANNOUNCEMENTS = [
