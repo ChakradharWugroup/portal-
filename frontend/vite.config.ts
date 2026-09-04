@@ -19,7 +19,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/ai-api/, '/api')
       },
       '/django-api': {
-        target: process.env.VITE_DJANGO_URL || 'http://127.0.0.1:8000',
+        target: process.env.VITE_DJANGO_URL || 'http://127.0.0.1:8005',
         changeOrigin: false,
         secure: false,
         rewrite: (path) => path.replace(/^\/django-api/, '/api')
