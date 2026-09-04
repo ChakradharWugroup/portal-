@@ -12,7 +12,6 @@ import asyncio
 from app.meeting_ai.streaming.audio_receiver import AudioReceiver
 from app.meeting_ai.ai.whisper import WhisperTranscriber
 from app.meeting_ai.ai.whisper import WhisperTranscriber
-from app.meeting_ai.ai.deepgram_ai import DeepgramAI
 from app.meeting_ai.ai.pyannote_diarizer import PyannoteDiarizer
 from app.meeting_ai.ai.summarizer import MeetingSummarizer
 from app.meeting_ai.teams.webhook import webhook_router
@@ -35,7 +34,6 @@ import asyncio
 from app.meeting_ai.streaming.audio_receiver import AudioReceiver
 from app.meeting_ai.ai.whisper import WhisperTranscriber
 from app.meeting_ai.ai.whisper import WhisperTranscriber
-from app.meeting_ai.ai.deepgram_ai import DeepgramAI
 from app.meeting_ai.ai.pyannote_diarizer import PyannoteDiarizer
 from app.meeting_ai.ai.summarizer import MeetingSummarizer
 from app.meeting_ai.teams.webhook import webhook_router
@@ -53,13 +51,11 @@ active_receivers = {}
 dynamic_meetings = []
 # Initialize AI modules
 from app.meeting_ai.ai.whisper import WhisperTranscriber
-from app.meeting_ai.ai.deepgram_ai import DeepgramAI
 from app.meeting_ai.ai.pyannote_diarizer import PyannoteDiarizer
 from app.meeting_ai.ai.summarizer import MeetingSummarizer
 from app.meeting_ai.ai.gemini_ai import GeminiTranscriber
 
 transcriber = WhisperTranscriber()
-deepgram_client = DeepgramAI()
 pyannote_client = PyannoteDiarizer()
 summarizer = MeetingSummarizer()
 
@@ -562,7 +558,7 @@ async def process_youtube_url(url: str, meeting_id: str):
 
         def run_dump_json():
             return subprocess.run(
-                ["yt-dlp", "--cookies", "/app/cookies.txt", "--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android", "--dump-json", url],
+                ["yt-dlp"] + cookies_arg + ["--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android", "--dump-json", url],
                 capture_output=True
             )
 
@@ -650,7 +646,7 @@ async def process_youtube_url(url: str, meeting_id: str):
             def run_sub_download():
                 return subprocess.run(
                     [
-                        "yt-dlp", "--cookies", "/app/cookies.txt", "--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android",
+                        "yt-dlp"] + cookies_arg + ["--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android",
                         sub_flag,
                         "--sub-lang", subtitle_lang,
                         "--sub-format", "vtt",
@@ -805,7 +801,7 @@ async def process_youtube_url(url: str, meeting_id: str):
 
         def run_download():
             return subprocess.run(
-                ["yt-dlp", "--cookies", "/app/cookies.txt", "--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android", "-o", output_template, url],
+                ["yt-dlp"] + cookies_arg + ["--js-runtimes", "node", "--remote-components", "ejs:github", "--extractor-args", "youtube:player_client=android", "-o", output_template, url],
                 capture_output=True
             )
 
