@@ -2,3 +2,5 @@
 djangorestframework
 django-cors-headers
 httpx
+
+pymysql

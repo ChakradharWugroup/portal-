@@ -27,3 +27,6 @@ aiohttp
 torch
 torchaudio
 pyannote.audio
+yt-dlp
+google-genai
+python-dotenv
