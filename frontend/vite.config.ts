@@ -20,7 +20,7 @@ export default defineConfig({
       },
       '/django-api': {
         target: process.env.VITE_DJANGO_URL || 'http://django_backend:8005',
-        changeOrigin: true,
+        changeOrigin: false,
         secure: false,
         rewrite: (path) => path.replace(/^\/django-api/, '/api')
       }
