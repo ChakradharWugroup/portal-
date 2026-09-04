@@ -538,6 +538,7 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run("backend.api.fastapi:app", host="0.0.0.0", port=8000, reload=True)
 async def process_youtube_url(url: str, meeting_id: str):
+    import os
     cookies_arg = []
     if os.path.exists("/app/cookies.txt"):
         cookies_arg = ["--cookies", "/app/cookies.txt"]
