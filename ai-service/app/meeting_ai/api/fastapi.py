@@ -153,7 +153,7 @@ async def dispatch_bot(request: Request):
     meeting_id = f"mtg-{uuid.uuid4().hex[:6]}"
     
     # Run the node script in the background
-    bot_dir = "/app/teams-bot" if os.path.exists("/app/teams-bot") else os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "teams-bot")
+    bot_dir = "/app/teams-bot" if os.path.exists("/app/teams-bot") else os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), "teams-bot")
     
     import subprocess
     try:
@@ -190,7 +190,7 @@ async def schedule_meeting(req: ScheduleRequest):
         meeting_id = f"mtg-{hash(req.url) % 10000}"
         
         def job_func(url_val, m_id):
-            bot_dir = "/app/teams-bot" if os.path.exists("/app/teams-bot") else os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "teams-bot")
+            bot_dir = "/app/teams-bot" if os.path.exists("/app/teams-bot") else os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), "teams-bot")
             import subprocess
             subprocess.Popen(
                 ["node", "join_meeting.js", url_val, m_id],
