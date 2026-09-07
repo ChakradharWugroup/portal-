@@ -48,14 +48,14 @@ if (-not $ipAddress) { $ipAddress = "localhost" }
 
 Write-Host "----------------------------------------------" -ForegroundColor Green
 Write-Host "All services launched successfully in separate windows!" -ForegroundColor Green
-Write-Host "  - Portal Frontend:    http://${ipAddress}:3005" -ForegroundColor Green
-Write-Host "  - Portal Backend:     http://${ipAddress}:8005" -ForegroundColor Green
-Write-Host "  - NextChat:           http://${ipAddress}:3001" -ForegroundColor Green
-Write-Host "  - RVC Studio:         http://${ipAddress}:3002" -ForegroundColor Green
-Write-Host "  - Unified AI API:     http://${ipAddress}:8080" -ForegroundColor Green
+Write-Host "  - Portal Frontend:    http://DahJie-IT-002:3005" -ForegroundColor Green
+Write-Host "  - Portal Backend:     http://DahJie-IT-002:8005" -ForegroundColor Green
+Write-Host "  - NextChat:           http://DahJie-IT-002:3001" -ForegroundColor Green
+Write-Host "  - RVC Studio:         http://DahJie-IT-002:3002" -ForegroundColor Green
+Write-Host "  - Unified AI API:     http://DahJie-IT-002:8080" -ForegroundColor Green
 Write-Host "==============================================" -ForegroundColor Green
 
 Write-Host "Waiting 8 seconds for services to start before opening browser..." -ForegroundColor Cyan
 Start-Sleep -Seconds 8
-Start-Process "http://${ipAddress}:3005"
+Start-Process "http://DahJie-IT-002:3005"
 
