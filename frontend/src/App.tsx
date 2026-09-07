@@ -3279,7 +3279,6 @@ function DashboardView({
     { id: 'announcements', label: TRANSLATIONS[lang]?.announcements || 'Announcements', desc: 'Company Announcements & Notifications', icon: Megaphone, color: '#38bdf8' },
     { id: 'hr-services', label: TRANSLATIONS[lang]?.hrServices || 'HR Services', desc: 'HR & Directory Services', icon: Users, color: '#34d399' },
     { id: 'leave', label: TRANSLATIONS[lang]?.leave || 'Leave Management', desc: 'Submit Leaves & View Entitlements', icon: Calendar, color: '#f472b6' },
-    { id: 'ai-copilot', label: TRANSLATIONS[lang]?.aiCopilot || 'AI Copilot', desc: 'Smart Platform AI Copilot', icon: Bot, color: '#34d399' },
     { id: 'approvals', label: TRANSLATIONS[lang]?.approvals || 'Approvals', desc: 'Request Approvals & Action Items', icon: CheckSquare, color: '#c084fc' },
     { id: 'erp-access', label: TRANSLATIONS[lang]?.erpAccess || 'ERP Access', desc: 'Direct ERP Data Logs', icon: Database, color: '#38bdf8' },
     { id: 'reports', label: TRANSLATIONS[lang]?.reports || 'Reports & Analytics', desc: 'Reports, Drag & Resize Analytics', icon: BarChart3, color: '#fb923c' },
