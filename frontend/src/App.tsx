@@ -1,4 +1,4 @@
-import QRManagementView from './components/QRManagementView';
+﻿import QRManagementView from './components/QRManagementView';
 import MeetingAIView from './components/MeetingAIView';
 import { useMsal } from '@azure/msal-react';
 import React, { useState, useEffect, useRef } from 'react';
