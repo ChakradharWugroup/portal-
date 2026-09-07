@@ -3279,7 +3279,6 @@ function DashboardView({
     { id: 'announcements', label: TRANSLATIONS[lang]?.announcements || 'Announcements', desc: 'Company Announcements & Notifications', icon: Megaphone, color: '#38bdf8' },
     { id: 'hr-services', label: TRANSLATIONS[lang]?.hrServices || 'HR Services', desc: 'HR & Directory Services', icon: Users, color: '#34d399' },
     { id: 'leave', label: TRANSLATIONS[lang]?.leave || 'Leave Management', desc: 'Submit Leaves & View Entitlements', icon: Calendar, color: '#f472b6' },
-    { id: 'documents', label: TRANSLATIONS[lang]?.documents || 'Documents', desc: 'Company Document Store & Search', icon: FolderOpen, color: '#fbbf24' },
     { id: 'ai-copilot', label: TRANSLATIONS[lang]?.aiCopilot || 'AI Copilot', desc: 'Smart Platform AI Copilot', icon: Bot, color: '#34d399' },
     { id: 'approvals', label: TRANSLATIONS[lang]?.approvals || 'Approvals', desc: 'Request Approvals & Action Items', icon: CheckSquare, color: '#c084fc' },
     { id: 'erp-access', label: TRANSLATIONS[lang]?.erpAccess || 'ERP Access', desc: 'Direct ERP Data Logs', icon: Database, color: '#38bdf8' },
@@ -3296,7 +3295,6 @@ function DashboardView({
       { id: 'nextchat', label: 'NextChat (Dify)', desc: 'Enterprise AI NextChat Gateway', icon: Bot, color: '#f59e0b' },
       { id: 'meeting-ai', label: 'Meeting AI', desc: 'Transcriber and Meeting Summarization', icon: Megaphone, color: '#10b981' },
       { id: 'rvc-studio', label: 'RVC Studio', desc: 'Retrieval-based Voice Conversion AI', icon: Megaphone, color: '#a855f7' },
-      { id: 'tidb-data', label: 'TiDB Data View', desc: 'TiDB Cloud SQL Editor', icon: Database, color: '#3b82f6' },
       { id: 'qr-management', label: 'QR Management (TiDB)', desc: 'Manage TiDB Garment QR Codes', icon: QrCode, color: '#6366f1' }
   ];
 
