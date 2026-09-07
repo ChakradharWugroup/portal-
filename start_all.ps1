@@ -5,7 +5,7 @@ Write-Host "   Smart Enterprise AI Platform & Integrations" -ForegroundColor Cya
 Write-Host "==============================================" -ForegroundColor Cyan
 
 Write-Host "Cleaning up previously locked ports (EADDRINUSE prevention)..." -ForegroundColor Magenta
-$portsToClear = @(8080, 6432, 3004, 3001, 3002, 8000, 8005, 8440, 8445, 3441, 3442)
+$portsToClear = @(8080, 6432, 3005, 3001, 3002, 8000, 8005, 8440, 8445, 3441, 3442)
 foreach ($p in $portsToClear) {
     $conns = Get-NetTCPConnection -LocalPort $p -State Listen -ErrorAction SilentlyContinue
     if ($conns) {
@@ -22,7 +22,7 @@ Write-Host "[1 & 2/8] Starting Unified Django Backend (Port 8005)..." -Foregroun
 Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", "cd C:\Users\KalleChakradhar\Desktop\portal\django_backend; ..\venv_django\Scripts\python.exe manage.py runserver 0.0.0.0:8005"
 
 # 3. Start Portal Frontend
-Write-Host "[3/8] Starting Portal Frontend (Port 3004)..." -ForegroundColor Yellow
+Write-Host "[3/8] Starting Portal Frontend (Port 3005)..." -ForegroundColor Yellow
 Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", "cd C:\Users\KalleChakradhar\Desktop\portal\frontend; npm run dev"
 
 # 4. Start Dify Gateway
@@ -48,7 +48,7 @@ if (-not $ipAddress) { $ipAddress = "localhost" }
 
 Write-Host "----------------------------------------------" -ForegroundColor Green
 Write-Host "All services launched successfully in separate windows!" -ForegroundColor Green
-Write-Host "  - Portal Frontend:    http://${ipAddress}:3004" -ForegroundColor Green
+Write-Host "  - Portal Frontend:    http://${ipAddress}:3005" -ForegroundColor Green
 Write-Host "  - Portal Backend:     http://${ipAddress}:8005" -ForegroundColor Green
 Write-Host "  - NextChat:           http://${ipAddress}:3001" -ForegroundColor Green
 Write-Host "  - RVC Studio:         http://${ipAddress}:3002" -ForegroundColor Green
@@ -57,5 +57,5 @@ Write-Host "==============================================" -ForegroundColor Gre
 
 Write-Host "Waiting 8 seconds for services to start before opening browser..." -ForegroundColor Cyan
 Start-Sleep -Seconds 8
-Start-Process "http://${ipAddress}:3004"
+Start-Process "http://${ipAddress}:3005"
 
