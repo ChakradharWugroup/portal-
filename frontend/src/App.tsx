@@ -200,7 +200,7 @@ const DICTIONARY: { [key: string]: { [key: string]: string } } = {
   
   // HR Services
   "HR Services & Contacts": { "zh-TW": "人事服務與聯絡窗口", "zh-CN": "人事服务与联络窗口" },
-  "Employee Directory (Kaggle HR Dataset)": { "zh-TW": "員工名冊 (Kaggle HR 數據集)", "zh-CN": "员工名册 (Kaggle HR 数据集)" },
+  "Enterprise Employee Directory": { "zh-TW": "員工名冊 (Kaggle HR 數據集)", "zh-CN": "员工名册 (Kaggle HR 数据集)" },
   "All Departments": { "zh-TW": "所有部門", "zh-CN": "所有部门" },
   "HR Director": { "zh-TW": "人事總監", "zh-CN": "人事总监" },
   "Recruitment Manager": { "zh-TW": "招聘經理", "zh-CN": "招聘经理" },
@@ -3283,11 +3283,13 @@ function AnnouncementsView({ announcements, setAnnouncements, isBackendOnline, l
 
 // --- 3. HR SERVICES ---
 function HRServicesView({ employees, setEmployees, isBackendOnline }: any) {
-  const hrContacts = [
-    { name: 'David Vance', title: 'HR Director', email: 'david.vance@dahje.com', phone: '+886-2-8765-4321', ext: '101' },
-    { name: 'Alice Wu', title: 'Recruitment Manager', email: 'alice.wu@dahje.com', phone: '+886-2-8765-4322', ext: '102' },
-    { name: 'Kevin Lin', title: 'Employee Relations', email: 'kevin.lin@dahje.com', phone: '+886-2-8765-4323', ext: '103' }
-  ];
+  const hrContacts = employees.slice(0, 3).map((emp: any) => ({
+    name: emp.name,
+    title: emp.position || emp.role,
+    email: emp.email || 'N/A',
+    phone: emp.department || 'N/A',
+    ext: emp.extension || 'N/A'
+  }));
 
   const [search, setSearch] = useState('');
   const [deptFilter, setDeptFilter] = useState('All');
@@ -3465,7 +3467,7 @@ function HRServicesView({ employees, setEmployees, isBackendOnline }: any) {
       <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 700 }}>Employee Directory (Kaggle HR Dataset)</h3>
+            <h3 style={{ fontSize: '1.2rem', fontWeight: 700 }}>Enterprise Employee Directory</h3>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Real enterprise employee directory loaded from the database.</p>
           </div>
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
