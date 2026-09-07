@@ -41,9 +41,6 @@ Start-Process cmd.exe -ArgumentList "/k", "cd C:\Users\KalleChakradhar\Downloads
 Write-Host "[7/8] Starting Unified AI Backend (Port 8080)..." -ForegroundColor Yellow
 Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", "cd C:\Users\KalleChakradhar\Desktop\portal\ai-service; uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload"
 
-# 8. Start HTTPS Secure Wrapper
-Write-Host "[8/8] Starting HTTPS Secure Wrapper..." -ForegroundColor Yellow
-Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", "cd C:\Users\KalleChakradhar\Desktop\portal\frontend; node https-wrapper.js"
 
 # Get the local IPv4 address (excluding virtual/loopback adapters)
 $ipAddress = (Get-NetIPAddress -AddressFamily IPv4 -Type Unicast | Where-Object { $_.InterfaceAlias -notmatch 'Loopback|vEthernet|WSL|Tailscale' } | Select-Object -First 1).IPAddress
@@ -51,14 +48,14 @@ if (-not $ipAddress) { $ipAddress = "localhost" }
 
 Write-Host "----------------------------------------------" -ForegroundColor Green
 Write-Host "All services launched successfully in separate windows!" -ForegroundColor Green
-Write-Host "  - Portal Frontend:    https://${ipAddress}:3004" -ForegroundColor Green
-Write-Host "  - Portal Backend:     https://${ipAddress}:8445" -ForegroundColor Green
-Write-Host "  - NextChat:           https://${ipAddress}:3441" -ForegroundColor Green
-Write-Host "  - RVC Studio:         https://${ipAddress}:3442" -ForegroundColor Green
-Write-Host "  - Unified AI API:     https://${ipAddress}:8440" -ForegroundColor Green
+Write-Host "  - Portal Frontend:    http://${ipAddress}:3004" -ForegroundColor Green
+Write-Host "  - Portal Backend:     http://${ipAddress}:8005" -ForegroundColor Green
+Write-Host "  - NextChat:           http://${ipAddress}:3001" -ForegroundColor Green
+Write-Host "  - RVC Studio:         http://${ipAddress}:3002" -ForegroundColor Green
+Write-Host "  - Unified AI API:     http://${ipAddress}:8080" -ForegroundColor Green
 Write-Host "==============================================" -ForegroundColor Green
 
 Write-Host "Waiting 8 seconds for services to start before opening browser..." -ForegroundColor Cyan
 Start-Sleep -Seconds 8
-Start-Process "https://${ipAddress}:3004"
+Start-Process "http://${ipAddress}:3004"
 
