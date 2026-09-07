@@ -5,7 +5,7 @@ Write-Host "   Smart Enterprise AI Platform & Integrations" -ForegroundColor Cya
 Write-Host "==============================================" -ForegroundColor Cyan
 
 Write-Host "Cleaning up previously locked ports (EADDRINUSE prevention)..." -ForegroundColor Magenta
-$portsToClear = @(8080, 6432, 3005, 3001, 3002, 8000, 8005, 8440, 8445, 3441, 3442)
+$portsToClear = @(8080, 6432, 3004, 3001, 3002, 8000, 8005, 8440, 8445, 3441, 3442)
 foreach ($p in $portsToClear) {
     $conns = Get-NetTCPConnection -LocalPort $p -State Listen -ErrorAction SilentlyContinue
     if ($conns) {
@@ -22,7 +22,7 @@ Write-Host "[1 & 2/8] Starting Unified Django Backend (Port 8005)..." -Foregroun
 Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", "cd C:\Users\KalleChakradhar\Desktop\portal\django_backend; ..\venv_django\Scripts\python.exe manage.py runserver 0.0.0.0:8005"
 
 # 3. Start Portal Frontend
-Write-Host "[3/8] Starting Portal Frontend (Port 3005)..." -ForegroundColor Yellow
+Write-Host "[3/8] Starting Portal Frontend (Port 3004)..." -ForegroundColor Yellow
 Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", "cd C:\Users\KalleChakradhar\Desktop\portal\frontend; npm run dev"
 
 # 4. Start Dify Gateway
@@ -41,6 +41,9 @@ Start-Process cmd.exe -ArgumentList "/k", "cd C:\Users\KalleChakradhar\Downloads
 Write-Host "[7/8] Starting Unified AI Backend (Port 8080)..." -ForegroundColor Yellow
 Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", "cd C:\Users\KalleChakradhar\Desktop\portal\ai-service; uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload"
 
+# 8. Start HTTPS Secure Wrapper
+Write-Host "[8/8] Starting HTTPS Secure Wrapper..." -ForegroundColor Yellow
+Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", "cd C:\Users\KalleChakradhar\Desktop\portal\frontend; node https-wrapper.js"
 
 # Get the local IPv4 address (excluding virtual/loopback adapters)
 $ipAddress = (Get-NetIPAddress -AddressFamily IPv4 -Type Unicast | Where-Object { $_.InterfaceAlias -notmatch 'Loopback|vEthernet|WSL|Tailscale' } | Select-Object -First 1).IPAddress
@@ -49,10 +52,10 @@ if (-not $ipAddress) { $ipAddress = "localhost" }
 Write-Host "----------------------------------------------" -ForegroundColor Green
 Write-Host "All services launched successfully in separate windows!" -ForegroundColor Green
 Write-Host "  - Portal Frontend:    https://${ipAddress}:3004" -ForegroundColor Green
-Write-Host "  - Portal Backend:     https://${ipAddress}:3004/django-api" -ForegroundColor Green
-Write-Host "  - NextChat:           https://${ipAddress}:3004/nextchat-ui" -ForegroundColor Green
-Write-Host "  - RVC Studio:         https://${ipAddress}:3004/rvc-ui" -ForegroundColor Green
-Write-Host "  - Unified AI API:     https://${ipAddress}:3004/ai-api" -ForegroundColor Green
+Write-Host "  - Portal Backend:     https://${ipAddress}:8445" -ForegroundColor Green
+Write-Host "  - NextChat:           https://${ipAddress}:3441" -ForegroundColor Green
+Write-Host "  - RVC Studio:         https://${ipAddress}:3442" -ForegroundColor Green
+Write-Host "  - Unified AI API:     https://${ipAddress}:8440" -ForegroundColor Green
 Write-Host "==============================================" -ForegroundColor Green
 
 Write-Host "Waiting 8 seconds for services to start before opening browser..." -ForegroundColor Cyan
