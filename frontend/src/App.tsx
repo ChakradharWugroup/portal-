@@ -2862,13 +2862,13 @@ function DashboardView({
         
         {activeSubView === 'nextchat' && (
           <div style={{ height: '80vh', width: '100%', borderRadius: '12px', overflow: 'hidden' }}>
-            <iframe src={`/nextchat-ui/#/?settings=${encodeURIComponent(JSON.stringify({ key: userProfile.email || "kallec@wugroup.co" }))}`} style={{ width: '100%', height: '100%', border: 'none' }} title="NextChat" />
+            <iframe src={`https://${window.location.hostname}:3441/#/?settings=${encodeURIComponent(JSON.stringify({ key: userProfile.email || "kallec@wugroup.co" }))}`} style={{ width: '100%', height: '100%', border: 'none' }} title="NextChat" />
           </div>
         )}
                   {activeSubView === 'meeting-ai' && <MeetingAIView />}
           {activeSubView === 'rvc-studio' && (
             <div style={{ height: '80vh', width: '100%', borderRadius: '12px', overflow: 'hidden' }}>
-              <iframe src={`/rvc-ui`} style={{ width: '100%', height: '100%', border: 'none' }} title="RVC Studio" />
+              <iframe src={`https://${window.location.hostname}:3442`} style={{ width: '100%', height: '100%', border: 'none' }} title="RVC Studio" />
             </div>
           )}
         {activeSubView === 'qr-management' && <QRManagementView lang={lang} />}

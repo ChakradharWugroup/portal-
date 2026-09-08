@@ -12,22 +12,11 @@ export default defineConfig({
     host: '0.0.0.0',
     https: true,
     proxy: {
-            '/ai-api': {
+      '/ai-api': {
         target: process.env.VITE_AI_URL || 'http://127.0.0.1:8080',
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/ai-api/, '/api')
-      },
-      '/nextchat-ui': {
-        target: 'http://127.0.0.1:3001',
-        changeOrigin: false,
-        secure: false,
-      },
-      '/rvc-ui': {
-        target: 'http://127.0.0.1:3002',
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/rvc-ui/, '')
       },
       '/django-api': {
         target: process.env.VITE_DJANGO_URL || 'http://127.0.0.1:8005',
