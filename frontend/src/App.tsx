@@ -1033,39 +1033,11 @@ const MOCK_WORKFLOWS = [
   { id: 3, type: 'Purchase Order Approval', title: 'Approve PO-001 - Global Supply Partner A', requestedBy: 'John Smith', requestedDate: '2026-07-09', status: 'Pending', description: 'Purchase Order for cotton fiber raw material stock. Amount: $18,450.', referenceId: 1 }
 ];
 
-const MOCK_INVENTORY = Array.from({ length: 30 }, (_, i) => ({
-  id: i + 1,
-  code: `INV-${String(i + 1).padStart(3, '0')}`,
-  name: i === 11 ? 'Premium Cotton Thread (Blue)' : `Industrial Component Spec ${i + 1}`,
-  category: i % 3 === 0 ? 'Raw Materials' : i % 3 === 1 ? 'Work In Progress' : 'Finished Goods',
-  quantity: i === 11 ? 8 : (15 + (i * 7) % 350),
-  unit: i === 11 ? 'kg' : i % 2 === 0 ? 'pcs' : 'liters',
-  price: parseFloat((10.5 + (i * 12.3) % 250).toFixed(2)),
-  status: 'Active',
-  isLowStock: i === 11
-}));
+const MOCK_INVENTORY: any[] = [];
 
-const MOCK_POS = Array.from({ length: 30 }, (_, i) => ({
-  id: i + 1,
-  orderNumber: `PO-${String(i + 1).padStart(3, '0')}`,
-  type: 'PO',
-  customerOrVendor: `Global Supply Partner ${String.fromCharCode(65 + (i % 5))}`,
-  date: new Date(Date.now() - i * 24 * 60 * 60 * 1000).toLocaleDateString(),
-  totalAmount: parseFloat((1500 + (i * 340) % 20000).toFixed(2)),
-  status: i <= 2 ? 'Pending' : 'Approved',
-  itemDetails: `[{"item": "Component ${i + 1}", "qty": ${10 + i}, "price": 45}]`
-}));
+const MOCK_POS: any[] = [];
 
-const MOCK_SOS = Array.from({ length: 41 }, (_, i) => ({
-  id: i + 1,
-  orderNumber: `SO-${String(i + 1).padStart(3, '0')}`,
-  type: 'SO',
-  customerOrVendor: `Enterprise Client ${String.fromCharCode(86 + (i % 4))}`,
-  date: new Date(Date.now() - i * 12 * 60 * 60 * 1000).toLocaleDateString(),
-  totalAmount: parseFloat((4500 + (i * 620) % 45000).toFixed(2)),
-  status: i <= 1 ? 'Pending' : 'Approved',
-  itemDetails: `[{"item": "Finished Product ${i + 1}", "qty": ${5 + i}, "price": 120}]`
-}));
+const MOCK_SOS: any[] = [];
 
 const MOCK_KNOWLEDGE = [
   { id: 1, title: 'IT Helpdesk FAQ & Setup Guide', content: 'Welcome to Dah Je Co IT support. To configure your corporate email, download the Microsoft Authenticator app on your mobile device. Scan the QR code displayed in your profile settings. For VPN connections, select server "vpn-asia.dahje.com" and use your Active Directory credentials.', category: 'IT FAQ', author: 'Marcus Cole (IT Support)', views: 124 },
@@ -4611,7 +4583,7 @@ function AICopilotView({ isAiOnline, inventory, purchaseOrders, salesOrders, emp
           ? `無法連接至雲端 AI 服務。請確認 FastAPI 服務是否在連接埠 8080 正常運行。\n\n*本地模擬回覆*：目前採購訂單：30，銷售訂單：41，庫存總計：30件，人事部員工總數為：${employees.length}名。`
           : lang === 'zh-CN'
           ? `无法连接至云端 AI 服务。请确认 FastAPI 服务是否在端口 8080 正常运行。\n\n*本地模拟回复*：目前采购订单：30，销售订单：41，库存总计：30件，人事部员工总数为：${employees.length}名。`
-          : `Error communicating with the Python FastAPI AI service. Please make sure the server is running on port 8080. \n\n*Local Mock Response*: Total POs: 30, Total SOs: 41, Inventory: 30 items, HR Employee headcount is: ${employees.length} employees.`;
+          : `Error communicating with the Python FastAPI AI service. Please make sure the server is running on port 8080. \n\n*Local Mock Response*: Total POs: ${purchaseOrders.length}, Total SOs: ${salesOrders.length}, Inventory: ${inventory.length} items, HR Employee headcount is: ${employees.length} employees.`;
         setMessages(prev => [...prev, { role: 'assistant', content: fallbackText }]);
       }
     } else {
